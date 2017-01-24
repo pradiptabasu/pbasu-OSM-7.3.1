@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com:modelEntity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.mslv.com/studio/provisioning/model/workgroup" xmlns:com="http://www.mslv.com/studio/core/model/common" xsi:type="com:environmentType" name="HA-UDV">
+  <com:displayName>Environment</com:displayName>
+  <com:saveVersion>4</com:saveVersion>
+  <com:id>JpKsDHN-QGSeXNXMcCAzeA</com:id>
+  <com:endpoint>http://osm-wls-udv.tdk.dk:8004/cartridge/wsapi</com:endpoint>
+</com:modelEntity>
