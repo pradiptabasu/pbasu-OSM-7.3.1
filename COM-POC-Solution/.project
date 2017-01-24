@@ -3,9 +3,12 @@
 	<name>COM-POC-Solution</name>
 	<comment></comment>
 	<projects>
-		<project>SalesOrderFulfillment-POCRecognitionRule</project>
+		<project>COM-POC-ProductModel</project>
+		<project>SalesOrderFulfillment_Business</project>
 		<project>SalesOrderFulfillment-POCBase</project>
 		<project>SalesOrderFulfillment-POCDataDictionary</project>
+		<project>SalesOrderFulfillment-POCFulfillmentPattern</project>
+		<project>SalesOrderFulfillment-POCRecognitionRule</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

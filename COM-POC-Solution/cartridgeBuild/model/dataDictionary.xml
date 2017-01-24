@@ -1157,7 +1157,6 @@
 	<schemaFile>dataDictionary/COM-POC-ProductModel/COM-POC-ProductModel.xsd</schemaFile>
 	<schemaFile>dataDictionary/SalesOrderFulfillment-POCBase/SalesOrderFulfillment-POCBase.xsd</schemaFile>
 	<schemaFile>dataDictionary/SalesOrderFulfillment-POCFulfillmentPattern/SalesOrderFulfillment-POCFulfillmentPattern.xsd</schemaFile>
-	<schemaFile>dataDictionary/OracleComms_OSM_CommonDataDictionary/OracleComms_OSM_CommonDataDictionary.xsd</schemaFile>
 	<schemaFile>dataDictionary/SalesOrderFulfillment-POCRecognitionRule/SalesOrderFulfillment-POCRecognitionRule.xsd</schemaFile>
 	<schemaFile>dataDictionary/SalesOrderFulfillment_Business/SalesOrderFulfillment_Business.xsd</schemaFile>
 	<schemaFile>dataDictionary/SalesOrderFulfillment-POCDataDictionary/SalesOrderFulfillment-POCDataDictionary.xsd</schemaFile>

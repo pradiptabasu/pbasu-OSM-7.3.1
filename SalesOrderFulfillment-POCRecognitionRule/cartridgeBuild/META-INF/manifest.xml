@@ -4,7 +4,7 @@
         <Name>SalesOrderFulfillment-POCRecognitionRule</Name>
         <Version>1.0.0.0.0</Version>
         <Type>OSM</Type>
-        <BuildID>39</BuildID>
+        <BuildID>41</BuildID>
     </Identification>
     <Component>
         <Type>ModelComponentType</Type>

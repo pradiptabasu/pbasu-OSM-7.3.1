@@ -10,7 +10,7 @@
       </relation>
     </project>
     <componentElements>
-      <element xsi:type="osm:Component" id="ocs=ItemGranularity+osm.orch.orderComponentSpec.element=FEFboTWBQUe1WkbAndqG3w" type="osm.orch.orderComponentSpec.element" typeName="Orchestration Component Element" kind="Element" name="ItemGranularity" path="/COM_FulfillmentGranularity/ItemGranularity"/>
+      <element xsi:type="osm:Component" id="ocs=ItemGranularity+osm.orch.orderComponentSpec.element=RTSMCVlOTFy9Ehw7YUrJWQ" type="osm.orch.orderComponentSpec.element" typeName="Orchestration Component Element" kind="Element" name="ItemGranularity" path="/COM_FulfillmentGranularity/ItemGranularity"/>
     </componentElements>
     <extend>
       <relation ref="ocs=COM_FulfillmentGranularity" type="Order Component Specification" name="Extends" kind="Entity">
