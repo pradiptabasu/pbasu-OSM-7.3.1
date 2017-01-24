@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:orchestrationSequence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://xmlns.oracle.com/communications/ordermanagement/model" name="SalesOrderFulfillmentOrchestrationSequence" namespace="SalesOrderFulfillment">
+  <model:description>SalesOrderFulfillmentOrchestrationSequence</model:description>
+  <model:orderItem>
+    <model:name>SalesOrderLine</model:name>
+    <model:namespace>SalesOrderFulfillment</model:namespace>
+  </model:orderItem>
+  <model:orderItemSelector>
+    <model:elementSetExpression xsi:type="model:XqueryExpressionRuleType" enabled="true">
+      <model:xquery><![CDATA[declare namespace ws="http://xmlns.oracle.com/communications/ordermanagement";
+.//ws:OrderLines/ws:OrderLine
+
+]]></model:xquery>
+    </model:elementSetExpression>
+  </model:orderItemSelector>
+  <model:fulfillmentMode>
+    <model:fulfillmentModeRefExpression xsi:type="model:XqueryExpressionRuleType" enabled="true">
+      <model:xquery><![CDATA[declare namespace ws="http://xmlns.oracle.com/communications/ordermanagement";
+.//ws:OrderHeader/ws:Mode/text()]]></model:xquery>
+    </model:fulfillmentModeRefExpression>
+  </model:fulfillmentMode>
+  <model:stage name="FulfillmentFunctionStage">
+    <model:produces>
+      <model:name>COM_FulfillmentFunction</model:name>
+      <model:namespace>SalesOrderFulfillment</model:namespace>
+    </model:produces>
+  </model:stage>
+  <model:stage name="FulfillmentSystemStage">
+    <model:dependsOnStage>FulfillmentFunctionStage</model:dependsOnStage>
+    <model:produces>
+      <model:name>COM_FulfillmentSystem</model:name>
+      <model:namespace>SalesOrderFulfillment</model:namespace>
+    </model:produces>
+  </model:stage>
+  <model:stage name="ProcessingGranularityStage">
+    <model:dependsOnStage>FulfillmentSystemStage</model:dependsOnStage>
+    <model:produces>
+      <model:name>COM_FulfillmentGranularity</model:name>
+      <model:namespace>SalesOrderFulfillment</model:namespace>
+    </model:produces>
+  </model:stage>
+  <model:summaryView>
+    <model:view>
+      <model:name>SalesOrderFulfillment-OrderDetailsViewTask</model:name>
+      <model:namespace>urn:oracle:communications:ordermanagement:SalesOrderFulfillment-POCBase:1.1.0.0.0</model:namespace>
+    </model:view>
+    <model:workgroup>
+      <model:name>SalesOrderFulfillment-Role</model:name>
+      <model:namespace>urn:oracle:communications:ordermanagement:SalesOrderFulfillment-POCBase:1.1.0.0.0</model:namespace>
+    </model:workgroup>
+  </model:summaryView>
+  <model:detailView>
+    <model:view>
+      <model:name>SalesOrderFulfillment-OrderDetailsViewTask</model:name>
+      <model:namespace>urn:oracle:communications:ordermanagement:SalesOrderFulfillment-POCBase:1.1.0.0.0</model:namespace>
+    </model:view>
+    <model:workgroup>
+      <model:name>SalesOrderFulfillment-Role</model:name>
+      <model:namespace>urn:oracle:communications:ordermanagement:SalesOrderFulfillment-POCBase:1.1.0.0.0</model:namespace>
+    </model:workgroup>
+  </model:detailView>
+</model:orchestrationSequence>

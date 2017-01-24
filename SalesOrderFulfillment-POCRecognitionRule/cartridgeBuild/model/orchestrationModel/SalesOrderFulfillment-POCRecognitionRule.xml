@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:orchestrationModel xmlns:model="http://xmlns.oracle.com/communications/ordermanagement/model" name="SalesOrderFulfillment-POCRecognitionRule" namespace="SalesOrderFulfillment-POCRecognitionRule">
+  <model:description>SalesOrderFulfillment-POCRecognitionRule</model:description>
+</model:orchestrationModel>

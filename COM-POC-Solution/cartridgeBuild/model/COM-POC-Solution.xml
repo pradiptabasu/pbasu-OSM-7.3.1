@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cartridge namespace="COM-POC-Solution" version="1.1.0.0.0" 
+    xsi:schemaLocation="http://www.metasolv.com/OMS/OrderModel/2002/06/25" 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns:xi="http://www.w3.org/2001/XInclude" 
+    xmlns="http://www.metasolv.com/OMS/OrderModel/2002/06/25"    
+    xmlns:model="http://xmlns.oracle.com/communications/ordermanagement/model">	
+		<description>COM-POC-Solution</description>
+		<default>true</default>
+		<timestamp>2007-02-01T21:31:09</timestamp>
+		<state name="accepted">
+		   	<description>Accepted</description>
+		</state>
+		<state name="received">
+		   	<description>Received</description>
+		</state>
+		<state name="assigned">
+		   	<description>Assigned</description>
+		</state>
+		<state name="completed">
+		   	<description>Completed</description>
+		</state> 
+ 		<status name="next">
+		   	<description>Next</description>
+		   	<allowableConstraintViolationSeverity>WARNING</allowableConstraintViolationSeverity>
+		</status>
+ 		<status name="cancel">
+		   	<description>Cancel</description>
+		   	<allowableConstraintViolationSeverity>WARNING</allowableConstraintViolationSeverity>
+		</status>
+ 		<status name="ErrorState">
+		   	<description>Errorstate</description>
+		   	<allowableConstraintViolationSeverity>CRITICAL</allowableConstraintViolationSeverity>
+		</status>
+ 		<status name="all_subprocess_threads_complete">
+		   	<description>N/A</description>
+		   	<allowableConstraintViolationSeverity>CRITICAL</allowableConstraintViolationSeverity>
+		</status>
+ 		<status name="back">
+		   	<description>Back</description>
+		   	<allowableConstraintViolationSeverity>WARNING</allowableConstraintViolationSeverity>
+		</status>
+ 		<status name="finish">
+		   	<description>Finish</description>
+		   	<allowableConstraintViolationSeverity>WARNING</allowableConstraintViolationSeverity>
+		</status>
+ 		<xi:include href="task/FalloutOrderDetailsView.xml"/>
+ 		<xi:include href="task/FalloutOrderDetailsView_view.xml"/>
+ 		
+ 		
+ 		<xi:include href="task/ProvisionTaskAuto.xml"/>
+ 		<xi:include href="task/ProvisionTaskAuto_view.xml"/>
+ 		
+ 		
+ 		<xi:include href="task/SalesOrderFulfillment-OrderDetailsViewTask.xml"/>
+ 		<xi:include href="task/SalesOrderFulfillment-OrderDetailsViewTask_view.xml"/>
+ 		
+ 		
+ 		<xi:include href="task/FalloutTask.xml"/>
+ 		<xi:include href="task/FalloutTask_view.xml"/>
+ 		
+ 		
+ 		<xi:include href="task/ProductValidateTask.xml"/>
+ 		<xi:include href="task/ProductValidateTask_view.xml"/>
+ 		
+ 		
+ 		<xi:include href="task/TrackEventTask.xml"/>
+ 		<xi:include href="task/TrackEventTask_view.xml"/>
+ 		
+ 		
+ 		<xi:include href="task/ProductValidateTaskAuto.xml"/>
+ 		<xi:include href="task/ProductValidateTaskAuto_view.xml"/>
+ 		
+ 		
+ 		<xi:include href="task/ProvisionTask.xml"/>
+ 		<xi:include href="task/ProvisionTask_view.xml"/>
+ 		
+ 		
+ 		<xi:include href="task/TrackEventTaskAuto.xml"/>
+ 		<xi:include href="task/TrackEventTaskAuto_view.xml"/>
+ 		
+ 		
+ 		<xi:include href="task/SalesOrderFulfillment-CreationTask.xml"/>
+ 		<xi:include href="task/SalesOrderFulfillment-CreationTask_view.xml"/>
+ 		
+ 		
+ 		<xi:include href="task/FalloutOrder-CreationTask.xml"/>
+ 		<xi:include href="task/FalloutOrder-CreationTask_view.xml"/>
+ 		
+ 			
+		<task name="start1" xsi:type="ruleTaskType">
+			<description>start1</description>
+			<state>completed</state>
+			<state>received</state>
+			<status>true</status>
+	   		<condition>null_rule</condition>
+			<compensationStrategy>
+				<onTaskReevaluate>redo</onTaskReevaluate>
+			</compensationStrategy>
+		</task>
+ 	 	<xi:include href="process/FalloutOrderProcess.xml"/>
+ 	 	<xi:include href="process/TrackEventBusinesProcess.xml"/>
+ 	 	<xi:include href="process/ProductValidateProcess.xml"/>
+ 	 	<xi:include href="process/ProvisionOrderProcess.xml"/>
+ 	 	
+	    <xi:include href="orchestrationProcess/SalesOrderFulfillmentOrchestrationProcess.xml"/>
+        
+		<xi:include href="dataDictionary.xml"/>
+		<xi:include href="masterOrderTemplate.xml"/>		
+ 		<xi:include href="orderLifecyclePolicy/SalesOrderFulfillment-LifeCyclePolicy.xml"/>
+ 		<xi:include href="order/FalloutOrder.xml"/>
+ 		<xi:include href="order/FalloutOrder_orderType.xml"/>
+	 	<xi:include href="order/FalloutOrder_orderSource.xml"/>
+ 		<xi:include href="order/SalesOrderFulfillment.xml"/>
+ 		<xi:include href="order/SalesOrderFulfillment_orderType.xml"/>
+	 	<xi:include href="order/SalesOrderFulfillment_orderSource.xml"/>
+		<workgroup name="SalesOrderFulfillment-Role">
+	   		
+	 	
+				<permissions>
+			
+ 				<orderEntry>
+        			<orderType>FalloutOrder</orderType>
+		     	   <orderSource>FalloutOrder</orderSource>
+				</orderEntry>
+ 				<orderEntry>
+        			<orderType>SalesOrderFulfillment</orderType>
+		     	   <orderSource>SalesOrderFulfillment</orderSource>
+				</orderEntry>
+ 	 			<task executionModes="do undo redo">FalloutOrderDetailsView</task>
+ 	 			<task executionModes="do undo redo">ProvisionTaskAuto</task>
+ 	 			<task executionModes="do undo redo">SalesOrderFulfillment-OrderDetailsViewTask</task>
+ 	 			<task executionModes="do undo redo">FalloutTask</task>
+ 	 			<task executionModes="do undo redo">ProductValidateTask</task>
+ 	 			<task executionModes="do undo redo">TrackEventTask</task>
+ 	 			<task executionModes="do undo redo">ProductValidateTaskAuto</task>
+ 	 			<task executionModes="do undo redo">ProvisionTask</task>
+ 	 			<task executionModes="do undo redo">TrackEventTaskAuto</task>
+ 	 			<task executionModes="do undo redo">SalesOrderFulfillment-CreationTask</task>
+ 	 			<task executionModes="do undo redo">FalloutOrder-CreationTask</task>
+   			</permissions>
+		</workgroup>
+		<model:complexType name="AbstractProperty" namespace="http://xmlns.oracle.com/communications/studio/ordermanagement/transformation" abstract="true" final="false">
+			<model:description>AbstractProperty</model:description>
+		</model:complexType>
+		<model:complexType name="AbstractParameterSpecification" namespace="http://xmlns.oracle.com/communications/studio/ordermanagement/transformation" abstract="true" final="false">
+			<model:description>AbstractParameterSpecification</model:description>
+			
+				 <model:extends>
+				    <model:name>BaseAbstractParameterSpecificationType</model:name>
+				    <model:namespace>OracleComms_OSM_CommonDataDictionary/4.0</model:namespace>
+				  </model:extends>
+			
+		</model:complexType>
+		<xi:include href="complexType/AbstractOrderItem.xml"/>
+		
+			<xi:include href="complexType/BaseAbstractOrderItem.xml"/>
+		
+	 
+
+        	<xi:include href="orderComponentSubProcess/ProductValidateBusinessFunction_ProductValidateProcess.xml"/>
+        	<xi:include href="orderComponentSubProcess/ProvisionBusinessFunction_ProvisionOrderProcess.xml"/>
+        	<xi:include href="orderComponentSubProcess/TrackEventBusinessFunction_TrackEventBusinesProcess.xml"/>
+      <model:resource name="COM-POC-Solution" namespace="COM-POC-Solution">
+         <model:description>resource files</model:description>
+         <model:location>resources/resources.zip</model:location>
+      </model:resource>
+      <model:xmlCatalog name="COM-POC-Solution" namespace="COM-POC-Solution">
+         <model:description>xml catalogs</model:description>
+         <model:location>xmlCatalogs/catalogs.zip</model:location>
+      </model:xmlCatalog>
+         <xi:include href="manifest/COM-POC-Solution.xml"/>  
+               
+</cartridge>
+
+

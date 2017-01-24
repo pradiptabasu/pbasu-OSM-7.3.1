@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://xmlns.oracle.com/communications/studio/model" xmlns:osm="http://xmlns.oracle.com/communications/studio/model/osm">
+  <metadata version="1.0.0" release="7.3.0"/>
+  <entity xsi:type="osm:Order" id="ord=SalesOrderFulfillment" type="ord" typeName="Order" name="SalesOrderFulfillment" resource="\SalesOrderFulfillment-POCBase\model\ORDER\SalesOrderFulfillment.order">
+    <displayName lang="default">SalesOrderFulfillment</displayName>
+    <note lang="default"/>
+    <project>
+      <relation ref="oprj=SalesOrderFulfillment-POCBase" type="Order and Service Management Project" name="Dependency">
+        <target name="SalesOrderFulfillment-POCBase" typeName="Order and Service Management Project"/>
+      </relation>
+    </project>
+    <orderTemplateNode>
+      <relation ref="ds=SalesOrderFulfillment-POCDataDictionary" type="Data Schema" name="Order Template Node" kind="Entity">
+        <target name="SalesOrderFulfillment-POCDataDictionary" typeName="Data Schema"/>
+      </relation>
+      <relation ref="ds=SalesOrderFulfillment_Business" type="Data Schema" name="Order Template Node" kind="Entity">
+        <target name="SalesOrderFulfillment_Business" typeName="Data Schema"/>
+      </relation>
+    </orderTemplateNode>
+    <creationTask>
+      <relation ref="mtsk=SalesOrderFulfillment-CreationTask" type="Manual Task" name="Creation Task" kind="Entity">
+        <target name="SalesOrderFulfillment-CreationTask" typeName="Manual Task"/>
+      </relation>
+    </creationTask>
+    <queryTask>
+      <relation ref="mtsk=SalesOrderFulfillment-OrderDetailsViewTask" type="Manual Task" name="Query View" kind="Entity">
+        <target name="SalesOrderFulfillment-OrderDetailsViewTask" typeName="Manual Task"/>
+      </relation>
+    </queryTask>
+    <defaultProcess>
+      <relation ref="op=SalesOrderFulfillmentOrchestrationProcess" type="Orchestration Process" name="Default Process" kind="Entity">
+        <target name="SalesOrderFulfillmentOrchestrationProcess" typeName="Orchestration Process"/>
+      </relation>
+    </defaultProcess>
+    <roles>
+      <relation ref="rol=SalesOrderFulfillment-Role" type="Role" name="Permission" kind="Entity">
+        <target name="SalesOrderFulfillment-Role" typeName="Role"/>
+      </relation>
+    </roles>
+    <lifeCyclePolicy>
+      <relation ref="olp=SalesOrderFulfillment-LifeCyclePolicy" type="Order Lifecycle Policy" name="Policy" kind="Entity">
+        <target name="SalesOrderFulfillment-LifeCyclePolicy" typeName="Order Lifecycle Policy"/>
+      </relation>
+    </lifeCyclePolicy>
+    <referenceDataNodes>
+      <relation ref="ocs=ProductValidateBusinessFunction" type="Order Component Specification" name="Order Template Reference Node" kind="Entity">
+        <target name="ProductValidateBusinessFunction" typeName="Order Component Specification"/>
+      </relation>
+    </referenceDataNodes>
+    <orderTemplateNodes>
+      <element xsi:type="osm:OrderTemplateNode" id="ord=SalesOrderFulfillment+prov.order.node=/ControlData" type="prov.order.node" typeName="Order Node Element" kind="Element" name="ControlData" path="/ControlData"/>
+      <element xsi:type="osm:OrderTemplateNode" id="ord=SalesOrderFulfillment+prov.order.node=/inputMessage" type="prov.order.node" typeName="Order Node Element" kind="Element" name="inputMessage" path="/inputMessage"/>
+      <element xsi:type="osm:OrderTemplateNode" id="ord=SalesOrderFulfillment+prov.order.node=/Order" type="prov.order.node" typeName="Order Node Element" kind="Element" name="Order" path="/Order"/>
+    </orderTemplateNodes>
+    <rules>
+      <element xsi:type="osm:OrderRule" id="ord=SalesOrderFulfillment+prov.order.rule=wpQSrcm0QSGpPuHYTo5gFw" type="prov.order.rule" typeName="Order Template Rule Element" kind="Element" name="null_rule" path="null_rule"/>
+    </rules>
+  </entity>
+</model:Model>

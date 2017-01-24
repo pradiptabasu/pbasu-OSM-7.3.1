@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<masterOrderTemplate 
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+    xmlns="http://www.metasolv.com/OMS/OrderModel/2002/06/25">
+        <dataNode element="inputMessage"  />
+        <dataNode element="ControlData"  ><dataNode element="OrderItem"  > </dataNode>
+<dataNode element="Functions"  ><dataNode element="ProductValidateBusinessFunction"  ><dataNode element="componentKey"   />
+<dataNode element="orderItem"  ><dataNode element="orderItemRef"  >	<reference>
+		<pathToNode>/ControlData/OrderItem</pathToNode>
+	</reference>
+ </dataNode>
+ </dataNode>
+<dataNode element="calculatedStartDate"   />
+<dataNode element="duration"   />
+ </dataNode>
+<dataNode element="ProvisionBusinessFunction"  ><dataNode element="componentKey"   />
+<dataNode element="orderItem"  ><dataNode element="orderItemRef"  >	<reference>
+		<pathToNode>/ControlData/OrderItem</pathToNode>
+	</reference>
+ </dataNode>
+ </dataNode>
+<dataNode element="calculatedStartDate"   />
+<dataNode element="duration"   />
+ </dataNode>
+<dataNode element="TrackEventBusinessFunction"  ><dataNode element="componentKey"   />
+<dataNode element="orderItem"  ><dataNode element="orderItemRef"  >	<reference>
+		<pathToNode>/ControlData/OrderItem</pathToNode>
+	</reference>
+ </dataNode>
+ </dataNode>
+<dataNode element="calculatedStartDate"   />
+<dataNode element="duration"   />
+ </dataNode>
+ </dataNode>
+        </dataNode>
+        <dataNode element="Order"  ><dataNode element="OrderHeader"  ><dataNode element="SalesOrderNumber"   />
+<dataNode element="SalesChannel"  ><dataNode element="ID"   />
+<dataNode element="Name"   />
+<dataNode element="Salesman"   />
+<dataNode element="SalesmanEmail"   />
+<dataNode element="FulfillmentId"   />
+<dataNode element="SystemId"   />
+ </dataNode>
+<dataNode element="OrderType"   />
+<dataNode element="OrderCreationDate"   />
+<dataNode element="RequestedDeliveryDate"   />
+<dataNode element="Mode"   />
+<dataNode element="ReferenceKey"   />
+<dataNode element="Catalog"   />
+<dataNode element="RightOfCancellation"   />
+<dataNode element="CustomerReference"   />
+<dataNode element="OrderConfirmation"  ><dataNode element="Email"   />
+<dataNode element="SignatureDate"   />
+<dataNode element="Id"   />
+<dataNode element="ContactNo"   />
+<dataNode element="ContactName"   />
+ </dataNode>
+<dataNode element="Id"   />
+ </dataNode>
+<dataNode element="CustomerHeader"  ><dataNode element="CustomerType"   />
+<dataNode element="CustomerName"   />
+<dataNode element="ContractCustomer"   />
+<dataNode element="CustomerInfo"  ><dataNode element="CompanyInfo"  ><dataNode element="CVRNo"   />
+<dataNode element="CompanyName"   />
+<dataNode element="Department"   />
+<dataNode element="Email"   />
+<dataNode element="Phone"   />
+<dataNode element="ContactPerson"   />
+ </dataNode>
+<dataNode element="ResidentialInfo"  ><dataNode element="CPRno"   />
+<dataNode element="IdNo"   />
+<dataNode element="IDType"   />
+<dataNode element="FirstName"   />
+<dataNode element="LastName"   />
+<dataNode element="Phone"   />
+<dataNode element="Email"   />
+ </dataNode>
+<dataNode element="Address"  ><dataNode element="AddressID"   />
+<dataNode element="StreetName"   />
+<dataNode element="HouseNo"   />
+<dataNode element="ZipCode"   />
+<dataNode element="Country"   />
+<dataNode element="City"   />
+<dataNode element="Village"   />
+<dataNode element="HouseLetter"   />
+<dataNode element="Floor"   />
+<dataNode element="ApartmentNo"   />
+<dataNode element="HouseKey"   />
+<dataNode element="Side"   />
+<dataNode element="Pob"   />
+ </dataNode>
+ </dataNode>
+<dataNode element="Id"   />
+ </dataNode>
+<dataNode element="AccountDetails"  ><dataNode element="AccountInfo"  ><dataNode element="AccountType"   />
+<dataNode element="AccountNo"   />
+<dataNode element="CustomerName"   />
+<dataNode element="CustomerNumber"   />
+<dataNode element="ParentAccountNo"   />
+<dataNode element="TargetAccountNo"   />
+<dataNode element="OriginalAccountNo"   />
+<dataNode element="BillPeriod"   />
+<dataNode element="Segmentation"   />
+ </dataNode>
+<dataNode element="ERegistrationInfo"   />
+<dataNode element="ContactPermissionInfo"   />
+<dataNode element="Id"   />
+ </dataNode>
+<dataNode element="OrderDetails"  ><dataNode element="BillingDetails"  ><dataNode element="CompanyPayerInfo"  ><dataNode element="CVRNo"   />
+<dataNode element="CompanyName"   />
+<dataNode element="Department"   />
+<dataNode element="Email"   />
+<dataNode element="Phone"   />
+ </dataNode>
+<dataNode element="ResidentialPayerInfo"  ><dataNode element="CPRno"   />
+<dataNode element="IdNo"   />
+<dataNode element="IDType"   />
+<dataNode element="FirstName"   />
+<dataNode element="LastName"   />
+<dataNode element="Phone"   />
+<dataNode element="Email"   />
+ </dataNode>
+<dataNode element="Address"  ><dataNode element="AddressID"   />
+<dataNode element="StreetName"   />
+<dataNode element="HouseNo"   />
+<dataNode element="ZipCode"   />
+<dataNode element="Country"   />
+<dataNode element="City"   />
+<dataNode element="Village"   />
+<dataNode element="HouseLetter"   />
+<dataNode element="Floor"   />
+<dataNode element="ApartmentNo"   />
+<dataNode element="HouseKey"   />
+<dataNode element="Side"   />
+<dataNode element="Pob"   />
+ </dataNode>
+ </dataNode>
+<dataNode element="UserDetails"  ><dataNode element="CompanyUserInfo"  ><dataNode element="CVRNo"   />
+<dataNode element="CompanyName"   />
+<dataNode element="Department"   />
+<dataNode element="Email"   />
+<dataNode element="Phone"   />
+ </dataNode>
+<dataNode element="ResidentialUserInfo"  ><dataNode element="CPRno"   />
+<dataNode element="IdNo"   />
+<dataNode element="IDType"   />
+<dataNode element="FirstName"   />
+<dataNode element="LastName"   />
+<dataNode element="Phone"   />
+<dataNode element="Email"   />
+ </dataNode>
+<dataNode element="Address"  ><dataNode element="AddressID"   />
+<dataNode element="StreetName"   />
+<dataNode element="HouseNo"   />
+<dataNode element="ZipCode"   />
+<dataNode element="Country"   />
+<dataNode element="City"   />
+<dataNode element="Village"   />
+<dataNode element="HouseLetter"   />
+<dataNode element="Floor"   />
+<dataNode element="ApartmentNo"   />
+<dataNode element="HouseKey"   />
+<dataNode element="Side"   />
+<dataNode element="Pob"   />
+ </dataNode>
+ </dataNode>
+<dataNode element="ShipmentDetails"  ><dataNode element="ShipAddress"  ><dataNode element="AddressID"   />
+<dataNode element="StreetName"   />
+<dataNode element="HouseNo"   />
+<dataNode element="ZipCode"   />
+<dataNode element="Country"   />
+<dataNode element="City"   />
+<dataNode element="Village"   />
+<dataNode element="HouseLetter"   />
+<dataNode element="Floor"   />
+<dataNode element="ApartmentNo"   />
+<dataNode element="HouseKey"   />
+<dataNode element="Side"   />
+<dataNode element="Pob"   />
+ </dataNode>
+<dataNode element="CompanyShipInfo"  ><dataNode element="CVRNo"   />
+<dataNode element="CompanyName"   />
+<dataNode element="Department"   />
+<dataNode element="Email"   />
+<dataNode element="Phone"   />
+ </dataNode>
+<dataNode element="ResidentialShipInfo"  ><dataNode element="CPRno"   />
+<dataNode element="IdNo"   />
+<dataNode element="IDType"   />
+<dataNode element="FirstName"   />
+<dataNode element="LastName"   />
+<dataNode element="Phone"   />
+<dataNode element="Email"   />
+ </dataNode>
+ </dataNode>
+<dataNode element="InstallationDetails"  ><dataNode element="InstallationInfo"  ><dataNode element="AccessPtName"   />
+<dataNode element="FormerAccess"   />
+<dataNode element="NewAccess"   />
+<dataNode element="AccessAction"   />
+ </dataNode>
+<dataNode element="InstallationAddress"  ><dataNode element="AddressID"   />
+<dataNode element="StreetName"   />
+<dataNode element="HouseNo"   />
+<dataNode element="ZipCode"   />
+<dataNode element="Country"   />
+<dataNode element="City"   />
+<dataNode element="Village"   />
+<dataNode element="HouseLetter"   />
+<dataNode element="Floor"   />
+<dataNode element="ApartmentNo"   />
+<dataNode element="HouseKey"   />
+<dataNode element="Side"   />
+<dataNode element="Pob"   />
+ </dataNode>
+ </dataNode>
+<dataNode element="Id"   />
+<dataNode element="ERegistrationDetails"  ><dataNode element="InvoiceInfo"  ><dataNode element="InvoiceRemark"   />
+ </dataNode>
+ </dataNode>
+<dataNode element="OrderPrice"  ><dataNode element="PriceAgreementNumber"   />
+ </dataNode>
+ </dataNode>
+<dataNode element="OrderLine"  ><dataNode element="OrderLineId"   />
+<dataNode element="RootOrderItemId"   />
+<dataNode element="ParentOrderLineId"   />
+<dataNode element="ProductId"   />
+<dataNode element="ProductName"   />
+<dataNode element="ProductClass"   />
+<dataNode element="ProductCategory"   />
+<dataNode element="OrderLineAction"   />
+<dataNode element="ProductAttributes"  ><dataNode element="ParameterName"   />
+<dataNode element="ParameterValue"   />
+<dataNode element="ParameterAction"   />
+ </dataNode>
+<dataNode element="SplitBillAccount"   />
+<dataNode element="PriceAgreement"   />
+ </dataNode>
+<dataNode element="Fallout"  ><dataNode element="System"   />
+<dataNode element="Code"   />
+<dataNode element="Reason"   />
+<dataNode element="DateTimeStamp"   />
+ </dataNode>
+<dataNode element="FulfillmentOrderStatus"  ><dataNode element="System"   />
+<dataNode element="Code"   />
+<dataNode element="Description"   />
+<dataNode element="DateTimeStamp"   />
+ </dataNode>
+<dataNode element="OrderLines"  ><dataNode element="OrderLine"  ><dataNode element="OrderLineId"   />
+<dataNode element="RootOrderItemId"   />
+<dataNode element="ParentOrderLineId"   />
+<dataNode element="ProductId"   />
+<dataNode element="ProductName"   />
+<dataNode element="ProductClass"   />
+<dataNode element="ProductCategory"   />
+<dataNode element="OrderLineAction"   />
+<dataNode element="ProductAttributes"  ><dataNode element="ParameterName"   />
+<dataNode element="ParameterValue"   />
+<dataNode element="ParameterAction"   />
+ </dataNode>
+<dataNode element="SplitBillAccount"   />
+<dataNode element="PriceAgreement"   />
+ </dataNode>
+ </dataNode>
+        </dataNode>
+</masterOrderTemplate>

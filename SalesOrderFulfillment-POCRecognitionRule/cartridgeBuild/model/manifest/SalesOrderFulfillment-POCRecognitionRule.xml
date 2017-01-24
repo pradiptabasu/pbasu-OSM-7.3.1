@@ -1,0 +1,35 @@
+<_25:manifest xmlns:_25="http://www.metasolv.com/OMS/OrderModel/2002/06/25" xmlns:model="http://xmlns.oracle.com/communications/ordermanagement/model" name="SalesOrderFulfillment-POCRecognitionRule">
+  <model:description>SalesOrderFulfillment-POCRecognitionRule</model:description>
+  <_25:exportedEntity>
+    <model:name>SalesOrderFulfillment-POCRecognitionRule</model:name>
+    <model:namespace>urn:oracle:communications:ordermanagement:SalesOrderFulfillment-POCRecognitionRule:1.0.0.0.0</model:namespace>
+  </_25:exportedEntity>
+  <_25:exportedEntity>
+    <model:name>OrderFallout_ORP_RecognitionRule</model:name>
+    <model:namespace>SalesOrderFulfillment</model:namespace>
+  </_25:exportedEntity>
+  <_25:exportedEntity>
+    <model:name>SalesOrderRecognitionRule</model:name>
+    <model:namespace>SalesOrderFulfillment</model:namespace>
+  </_25:exportedEntity>
+  <_25:referencedEntity>
+    <model:name>SalesOrderFulfillment-POCDataDictionary</model:name>
+    <model:namespace>urn:oracle:communications:ordermanagement:SalesOrderFulfillment-POCRecognitionRule:1.0.0.0.0</model:namespace>
+  </_25:referencedEntity>
+  <_25:referencedEntity>
+    <model:name>FalloutOrder</model:name>
+    <model:namespace>urn:oracle:communications:ordermanagement:SalesOrderFulfillment-POCRecognitionRule:1.0.0.0.0</model:namespace>
+  </_25:referencedEntity>
+  <_25:referencedEntity>
+    <model:name>SalesOrderFulfillment</model:name>
+    <model:namespace>urn:oracle:communications:ordermanagement:SalesOrderFulfillment-POCRecognitionRule:1.0.0.0.0</model:namespace>
+  </_25:referencedEntity>
+  <_25:referencedCartridge>
+    <_25:namespace>SalesOrderFulfillment-POCDataDictionary</_25:namespace>
+    <_25:version>1.0.0.0.0</_25:version>
+  </_25:referencedCartridge>
+  <_25:referencedCartridge>
+    <_25:namespace>SalesOrderFulfillment-POCBase</_25:namespace>
+    <_25:version>1.1.0.0.0</_25:version>
+  </_25:referencedCartridge>
+</_25:manifest>

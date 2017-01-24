@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:orderItemSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://xmlns.oracle.com/communications/ordermanagement/model" name="SalesOrderLine" namespace="SalesOrderFulfillment">
+  <model:description>SalesOrderLine</model:description>
+  <model:complexDataType>
+    <model:name>SalesOrderLineType</model:name>
+    <model:namespace>SalesOrderFulfillment</model:namespace>
+  </model:complexDataType>
+  <model:productSpecMappingProperty>ProductSpec</model:productSpecMappingProperty>
+  <model:itemNameProperty>LineName</model:itemNameProperty>
+  <model:itemActionProperty>OrderLineAction</model:itemActionProperty>
+  <model:property name="LineId" useComplexDataType="false">
+    <model:nodesetExpression xsi:type="model:XqueryExpressionRuleType" enabled="true">
+      <model:xquery><![CDATA[declare namespace ws="http://xmlns.oracle.com/communications/ordermanagement";
+fn:normalize-space(ws:OrderLineId/text())]]></model:xquery>
+    </model:nodesetExpression>
+  </model:property>
+  <model:property name="LineName" useComplexDataType="false">
+    <model:nodesetExpression xsi:type="model:XqueryExpressionRuleType" enabled="true">
+      <model:xquery><![CDATA[declare namespace ws="http://xmlns.oracle.com/communications/ordermanagement";
+fn:normalize-space(ws:ProductName/text())]]></model:xquery>
+    </model:nodesetExpression>
+  </model:property>
+  <model:property name="ParentOrderLineId" useComplexDataType="false">
+    <model:nodesetExpression xsi:type="model:XqueryExpressionRuleType" enabled="true">
+      <model:xquery><![CDATA[declare namespace ws="http://xmlns.oracle.com/communications/ordermanagement";
+fn:normalize-space(ws:ParentOrderLineId/text())]]></model:xquery>
+    </model:nodesetExpression>
+  </model:property>
+  <model:property name="RootLineId" useComplexDataType="false">
+    <model:nodesetExpression xsi:type="model:XqueryExpressionRuleType" enabled="true">
+      <model:xquery><![CDATA[declare namespace ws="http://xmlns.oracle.com/communications/ordermanagement";
+fn:normalize-space(ws:RootOrderItemId/text())]]></model:xquery>
+    </model:nodesetExpression>
+  </model:property>
+  <model:property name="ProductClass" useComplexDataType="false">
+    <model:nodesetExpression xsi:type="model:XqueryExpressionRuleType" enabled="true">
+      <model:xquery><![CDATA[declare namespace ws="http://xmlns.oracle.com/communications/ordermanagement";
+declare variable $inputDoc as document-node() external;
+let $order := $inputDoc/GetOrder.Response/_root/inputMessage/ws:Order
+let $productClass  := fn:normalize-space(ws:ProductClass/text())
+let $ParentOrderLineId :=fn:normalize-space(ws:ParentOrderLineId/text())
+let $ParentproductClass :=fn:normalize-space($order//ws:OrderLine[ws:OrderLineId/text() =$ParentOrderLineId]/ws:ProductClass/text())
+ 
+return
+   if ($productClass  != '' and $productClass='Fixed')    then
+    $productClass
+   else
+     $ParentproductClass]]></model:xquery>
+    </model:nodesetExpression>
+  </model:property>
+  <model:property name="ProductSpec" useComplexDataType="false">
+    <model:nodesetExpression xsi:type="model:XqueryExpressionRuleType" enabled="true">
+      <model:xquery><![CDATA[declare namespace ws="http://xmlns.oracle.com/communications/ordermanagement";
+declare variable $inputDoc as document-node() external;
+let $order := $inputDoc/GetOrder.Response/_root/inputMessage/ws:Order
+let $productClass  := fn:normalize-space(ws:ProductClass/text())
+let $ParentOrderLineId :=fn:normalize-space(ws:ParentOrderLineId/text())
+let $ParentproductClass :=fn:normalize-space($order//ws:OrderLine[ws:ParentOrderLineId/text() =$ParentOrderLineId]/ws:ProductClass/text())
+let $productSpec := 'BusinessBBSpec'
+ 
+   return
+   if ($productClass  != '' )    then
+     if($productClass='Fixed') then
+        $productSpec
+     else()
+   else
+      if($ParentproductClass='Fixed') then
+          $productSpec
+     else()
+
+
+]]></model:xquery>
+    </model:nodesetExpression>
+  </model:property>
+  <model:property name="OrderLineAction" useComplexDataType="false">
+    <model:nodesetExpression xsi:type="model:XqueryExpressionRuleType" enabled="true">
+      <model:xquery><![CDATA[declare namespace ws="http://xmlns.oracle.com/communications/ordermanagement";
+fn:normalize-space(ws:OrderLineAction/text())]]></model:xquery>
+    </model:nodesetExpression>
+  </model:property>
+  <model:property name="AccountType" useComplexDataType="false">
+    <model:nodesetExpression xsi:type="model:XqueryExpressionRuleType" enabled="true">
+      <model:xquery><![CDATA[declare namespace sof="SalesOrderFulfillment";
+declare namespace ord="http://xmlns.oracle.com/communications/ordermanagement";
+
+declare variable $inputDoc as document-node() external;
+
+let $order := $inputDoc/GetOrder.Response/_root/inputMessage/ord:Order
+let $customerHeader := $order/ord:CustomerHeader 
+
+return
+$customerHeader/ord:CustomerType/text()]]></model:xquery>
+    </model:nodesetExpression>
+  </model:property>
+  <model:hierarchy name="parentChildHierarchy" useForChildCompletionDependency="true">
+    <model:key>
+      <model:nodesetExpression xsi:type="model:XqueryExpressionRuleType" enabled="true">
+        <model:xquery><![CDATA[declare namespace osm="http://xmlns.oracle.com/communications/ordermanagement/model";
+declare namespace prop="SalesOrderFulfillment";
+
+fn:normalize-space(osm:properties/prop:LineId/text())]]></model:xquery>
+      </model:nodesetExpression>
+    </model:key>
+    <model:parentKey>
+      <model:nodesetExpression xsi:type="model:XqueryExpressionRuleType" enabled="true">
+        <model:xquery><![CDATA[declare namespace osm="http://xmlns.oracle.com/communications/ordermanagement/model";
+declare namespace prop="SalesOrderFulfillment";
+
+fn:normalize-space(osm:properties/prop:ParentLineId/text())]]></model:xquery>
+      </model:nodesetExpression>
+    </model:parentKey>
+  </model:hierarchy>
+  <model:physicalHierarchy>parentChildHierarchy</model:physicalHierarchy>
+</model:orderItemSpec>

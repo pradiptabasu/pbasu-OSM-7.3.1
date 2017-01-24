@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:orderComponentSpec xmlns:model="http://xmlns.oracle.com/communications/ordermanagement/model" name="WholeOrderGranularity" namespace="SalesOrderFulfillment">
+  <model:description>WholeOrderGranularity</model:description>
+  <model:extends>
+    <model:name>COM_FulfillmentGranularity</model:name>
+    <model:namespace>SalesOrderFulfillment</model:namespace>
+  </model:extends>
+  <model:isExecutable>true</model:isExecutable>
+  <model:honorCalculatedDates>false</model:honorCalculatedDates>
+</model:orderComponentSpec>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://xmlns.oracle.com/communications/studio/model" xmlns:osm="http://xmlns.oracle.com/communications/studio/model/osm">
+  <metadata version="1.0.0" release="7.3.0"/>
+  <entity xsi:type="osm:OrderRecognitionRule" id="orr=SalesOrderRecognitionRule" type="orr" typeName="Order Recognition Rule" name="SalesOrderRecognitionRule" resource="\SalesOrderFulfillment-POCRecognitionRule\model\RECOGNITIONRULE\SalesOrderRecognitionRule.orderRecognitionRule">
+    <displayName lang="default">SalesOrderRecognitionRule</displayName>
+    <note lang="default"/>
+    <project>
+      <relation ref="oprj=SalesOrderFulfillment-POCRecognitionRule" type="Order and Service Management Project" name="Dependency">
+        <target name="SalesOrderFulfillment-POCRecognitionRule" typeName="Order and Service Management Project"/>
+      </relation>
+    </project>
+    <inputMessage>
+      <relation ref="ds=SalesOrderFulfillment-POCDataDictionary" type="Data Schema" name="Input Message" kind="Entity">
+        <target name="SalesOrderFulfillment-POCDataDictionary" typeName="Data Schema"/>
+      </relation>
+    </inputMessage>
+    <targetOrder>
+      <relation ref="ord=SalesOrderFulfillment" type="Order" name="Recognition Rule" kind="Entity">
+        <target name="SalesOrderFulfillment" typeName="Order"/>
+      </relation>
+    </targetOrder>
+    <orderTemplateNodeElements>
+      <element xsi:type="osm:OrderTemplateNode" id="orr=SalesOrderRecognitionRule+prov.order.node=/inputMessage" type="prov.order.node" typeName="Order Node Element" kind="Element" name="inputMessage" path="/inputMessage"/>
+    </orderTemplateNodeElements>
+  </entity>
+</model:Model>

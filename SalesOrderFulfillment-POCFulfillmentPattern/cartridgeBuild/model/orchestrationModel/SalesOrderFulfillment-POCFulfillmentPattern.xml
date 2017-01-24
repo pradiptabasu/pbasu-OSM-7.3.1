@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:orchestrationModel xmlns:include="http://www.w3.org/2001/XInclude" xmlns:model="http://xmlns.oracle.com/communications/ordermanagement/model" name="SalesOrderFulfillment-POCFulfillmentPattern" namespace="SalesOrderFulfillment-POCFulfillmentPattern">
+  <model:description>SalesOrderFulfillment-POCFulfillmentPattern</model:description>
+  <include:include href="productSpec/BusinessBBSpec.xml"/>
+  <include:include href="orderComponentSpec/ItemGranularity.xml"/>
+  <include:include href="orderComponentSpec/WholeOrderGranularity.xml"/>
+  <include:include href="orderComponentSpec/ProductValidate-ALL.xml"/>
+  <include:include href="orderComponentSpec/Provisioning-ALL.xml"/>
+  <include:include href="orderComponentSpec/RetriveOrderEvent.xml"/>
+  <include:include href="decompositionRule/DecomProductValidate_For_ItemGranularity.xml"/>
+  <include:include href="decompositionRule/DecomProductValidate_To_ProductValidate-ALL.xml"/>
+  <include:include href="decompositionRule/DecomProvisionOrder_For_WholeOrderGranularity.xml"/>
+  <include:include href="decompositionRule/DecompProvisionOrder_To_Provisioning-ALL.xml"/>
+  <include:include href="decompositionRule/DecompTrackEventOrder_For_RetriveOrderEvent.xml"/>
+  <include:include href="decompositionRule/DecompTrackEventOrder_For_WholeOrderGranularity.xml"/>
+</model:orchestrationModel>

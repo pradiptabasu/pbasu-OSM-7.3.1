@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cmn="http://xmlns.oracle.com/communications/studio/model/common" xmlns:model="http://xmlns.oracle.com/communications/studio/model">
+  <metadata version="1.0.0" release="7.3.0"/>
+  <entity xsi:type="cmn:Product" id="prd=Fixed" type="prd" typeName="Product" name="Fixed" resource="\COM-POC-ProductModel\model\Fixed.cmnProduct">
+    <displayName lang="default">Fixed</displayName>
+    <note lang="default"/>
+    <project>
+      <relation ref="mprj=COM-POC-ProductModel" type="Model Project" name="Dependency">
+        <target name="COM-POC-ProductModel" typeName="Model Project"/>
+      </relation>
+    </project>
+    <dataElements/>
+    <importAttributes>
+      <element id="prd=Fixed+prd.pa=oDctmVg-T9m6cg2Q-gSi2A" type="prd.pa" typeName="Product Attributes" kind="Element" name="Fixed Product Attributes" path="Fixed Product Attributes">
+        <note lang="default"></note>
+      </element>
+    </importAttributes>
+    <fulfillmentPatterns>
+      <element id="prd=Fixed+prd.pfp=1Ior-Oy-QG6RWjYfDaPTJw" type="prd.pfp" typeName="Product Fulfillment Pattern" kind="Element" name="Fixed Product Fulfillment Pattern" path="Fixed Product Fulfillment Pattern">
+        <options>
+          <relation ref="fp=COM_Broadband_FulfillmentPatern" type="Fulfillment Pattern" name="Fulfillment Pattern" kind="Entity">
+            <target name="COM_Broadband_FulfillmentPatern" typeName="Fulfillment Pattern"/>
+          </relation>
+        </options>
+        <key>Fixed</key>
+      </element>
+    </fulfillmentPatterns>
+  </entity>
+</model:Model>

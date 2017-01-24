@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog:catalog xmlns:catalog="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+  <catalog:rewriteURI rewritePrefix="urn:oracle:communications:ordermanagement:COM-POC-Solution:1.1.0.0.0" uriStartString="urn:oracle:communications:ordermanagement:SalesOrderFulfillment_Business:1.0.0.0.0"/>
+  <catalog:rewriteURI rewritePrefix="urn:oracle:communications:ordermanagement:COM-POC-Solution:1.1.0.0.0" uriStartString="urn:oracle:communications:ordermanagement:SalesOrderFulfillment-POCBase:1.1.0.0.0"/>
+  <catalog:rewriteURI rewritePrefix="urn:oracle:communications:ordermanagement:COM-POC-Solution:1.1.0.0.0" uriStartString="urn:oracle:communications:ordermanagement:SalesOrderFulfillment-POCDataDictionary:1.0.0.0.0"/>
+  <catalog:rewriteURI rewritePrefix="urn:oracle:communications:ordermanagement:COM-POC-Solution:1.1.0.0.0" uriStartString="urn:oracle:communications:ordermanagement:SalesOrderFulfillment-POCFulfillmentPattern:1.0.0.0.0"/>
+  <catalog:rewriteURI rewritePrefix="urn:oracle:communications:ordermanagement:COM-POC-Solution:1.1.0.0.0" uriStartString="urn:oracle:communications:ordermanagement:SalesOrderFulfillment-POCRecognitionRule:1.0.0.0.0"/>
+</catalog:catalog>

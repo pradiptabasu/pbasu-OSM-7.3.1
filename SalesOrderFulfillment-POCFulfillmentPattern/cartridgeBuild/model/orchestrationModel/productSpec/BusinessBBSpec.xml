@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:productSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://xmlns.oracle.com/communications/ordermanagement/model" name="BusinessBBSpec" namespace="SalesOrderFulfillment">
+  <model:description>BusinessBBSpec</model:description>
+  <model:orchestrationPlan>
+    <model:fulfillmentMode>
+      <model:name>Deliver</model:name>
+      <model:namespace>SalesOrderFulfillment</model:namespace>
+    </model:fulfillmentMode>
+    <model:component>
+      <model:name>TrackEventBusinessFunction</model:name>
+      <model:namespace>SalesOrderFulfillment</model:namespace>
+      <model:condition>
+        <model:booleanExpression xsi:type="model:XqueryExpressionRuleType" enabled="true">
+          <model:xquery><![CDATA[declare namespace osm="http://xmlns.oracle.com/communications/ordermanagement/model";
+declare namespace prop="SalesOrderFulfillment";
+
+let $customerTypes := fn:normalize-space(osm:properties/prop:AccountType/text())
+
+return
+    if ($customerTypes = ("Business"))
+    then true()
+    else false()]]></model:xquery>
+        </model:booleanExpression>
+      </model:condition>
+    </model:component>
+    <model:component>
+      <model:name>ProvisionBusinessFunction</model:name>
+      <model:namespace>SalesOrderFulfillment</model:namespace>
+    </model:component>
+    <model:component>
+      <model:name>ProductValidateBusinessFunction</model:name>
+      <model:namespace>SalesOrderFulfillment</model:namespace>
+    </model:component>
+    <model:transition name="BusinessBBSpec-Deliver--ProductValidateBusinessFunction-ProvisionBusinessFunction">
+      <model:from>
+        <model:component>
+          <model:name>ProductValidateBusinessFunction</model:name>
+          <model:namespace>SalesOrderFulfillment</model:namespace>
+        </model:component>
+      </model:from>
+      <model:to>
+        <model:name>ProvisionBusinessFunction</model:name>
+        <model:namespace>SalesOrderFulfillment</model:namespace>
+      </model:to>
+      <model:waitForCondition xsi:type="model:TaskStateWaitForConditionType">
+        <model:state>
+          <model:name>completed</model:name>
+          <model:namespace>default</model:namespace>
+        </model:state>
+      </model:waitForCondition>
+      <model:orderItemDependencyCriteria xsi:type="model:IdentityIntersectionOrderItemRelationship" name="BusinessBBSpec-Deliver--ProductValidateBusinessFunction-ProvisionBusinessFunctionOrderItemRelationship"/>
+    </model:transition>
+    <model:transition name="BusinessBBSpec-Deliver--ProvisionBusinessFunction-TrackEventBusinessFunction">
+      <model:from>
+        <model:component>
+          <model:name>ProvisionBusinessFunction</model:name>
+          <model:namespace>SalesOrderFulfillment</model:namespace>
+        </model:component>
+      </model:from>
+      <model:to>
+        <model:name>TrackEventBusinessFunction</model:name>
+        <model:namespace>SalesOrderFulfillment</model:namespace>
+      </model:to>
+      <model:waitForCondition xsi:type="model:TaskStateWaitForConditionType">
+        <model:state>
+          <model:name>completed</model:name>
+          <model:namespace>default</model:namespace>
+        </model:state>
+      </model:waitForCondition>
+      <model:orderItemDependencyCriteria xsi:type="model:IdentityIntersectionOrderItemRelationship" name="BusinessBBSpec-Deliver--ProvisionBusinessFunction-TrackEventBusinessFunctionOrderItemRelationship"/>
+    </model:transition>
+  </model:orchestrationPlan>
+</model:productSpec>

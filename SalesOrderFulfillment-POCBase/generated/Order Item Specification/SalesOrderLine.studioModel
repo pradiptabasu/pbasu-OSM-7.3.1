@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://xmlns.oracle.com/communications/studio/model" xmlns:osm="http://xmlns.oracle.com/communications/studio/model/osm">
+  <metadata version="1.0.0" release="7.3.0"/>
+  <entity xsi:type="osm:OrderItemSpecification" id="ois=SalesOrderLine" type="ois" typeName="Order Item Specification" name="SalesOrderLine" resource="\SalesOrderFulfillment-POCBase\model\ORDER-ITEM\SalesOrderLine.orderItemSpec">
+    <displayName lang="default">SalesOrderLine</displayName>
+    <note lang="default"/>
+    <project>
+      <relation ref="oprj=SalesOrderFulfillment-POCBase" type="Order and Service Management Project" name="Dependency">
+        <target name="SalesOrderFulfillment-POCBase" typeName="Order and Service Management Project"/>
+      </relation>
+    </project>
+    <requestedDeliveryDateProperty>
+      <relation ref="ois=SalesOrderLine+osm.orch.orderItemSpec.property=ProductSpec" type="Order Item Property Element" name="Requested Delivery Date Property" kind="Element">
+        <target name="ProductSpec" typeName="Order Item Property Element"/>
+        <inEntity name="SalesOrderLine" typeName="Order Item Specification"/>
+      </relation>
+    </requestedDeliveryDateProperty>
+    <orderItemNameProperty>
+      <relation ref="ois=SalesOrderLine+osm.orch.orderItemSpec.property=LineName" type="Order Item Property Element" name="Item Name Property" kind="Element">
+        <target name="LineName" typeName="Order Item Property Element"/>
+        <inEntity name="SalesOrderLine" typeName="Order Item Specification"/>
+      </relation>
+    </orderItemNameProperty>
+    <orderItemActionProperty>
+      <relation ref="ois=SalesOrderLine+osm.orch.orderItemSpec.property=OrderLineAction" type="Order Item Property Element" name="Action Property" kind="Element">
+        <target name="OrderLineAction" typeName="Order Item Property Element"/>
+        <inEntity name="SalesOrderLine" typeName="Order Item Specification"/>
+      </relation>
+    </orderItemActionProperty>
+    <orderItemProperties>
+      <element xsi:type="osm:OrderItemProperty" id="ois=SalesOrderLine+osm.orch.orderItemSpec.property=AccountType" type="osm.orch.orderItemSpec.property" typeName="Order Item Property Element" kind="Element" name="AccountType" path="/AccountType"/>
+      <element xsi:type="osm:OrderItemProperty" id="ois=SalesOrderLine+osm.orch.orderItemSpec.property=LineId" type="osm.orch.orderItemSpec.property" typeName="Order Item Property Element" kind="Element" name="LineId" path="/LineId"/>
+      <element xsi:type="osm:OrderItemProperty" id="ois=SalesOrderLine+osm.orch.orderItemSpec.property=LineName" type="osm.orch.orderItemSpec.property" typeName="Order Item Property Element" kind="Element" name="LineName" path="/LineName"/>
+      <element xsi:type="osm:OrderItemProperty" id="ois=SalesOrderLine+osm.orch.orderItemSpec.property=OrderLineAction" type="osm.orch.orderItemSpec.property" typeName="Order Item Property Element" kind="Element" name="OrderLineAction" path="/OrderLineAction"/>
+      <element xsi:type="osm:OrderItemProperty" id="ois=SalesOrderLine+osm.orch.orderItemSpec.property=ParentOrderLineId" type="osm.orch.orderItemSpec.property" typeName="Order Item Property Element" kind="Element" name="ParentOrderLineId" path="/ParentOrderLineId"/>
+      <element xsi:type="osm:OrderItemProperty" id="ois=SalesOrderLine+osm.orch.orderItemSpec.property=ProductClass" type="osm.orch.orderItemSpec.property" typeName="Order Item Property Element" kind="Element" name="ProductClass" path="/ProductClass"/>
+      <element xsi:type="osm:OrderItemProperty" id="ois=SalesOrderLine+osm.orch.orderItemSpec.property=ProductSpec" type="osm.orch.orderItemSpec.property" typeName="Order Item Property Element" kind="Element" name="ProductSpec" path="/ProductSpec"/>
+      <element xsi:type="osm:OrderItemProperty" id="ois=SalesOrderLine+osm.orch.orderItemSpec.property=RootLineId" type="osm.orch.orderItemSpec.property" typeName="Order Item Property Element" kind="Element" name="RootLineId" path="/RootLineId"/>
+    </orderItemProperties>
+    <orderItemHierarchies>
+      <element xsi:type="osm:OrderItemHierarchy" id="ois=SalesOrderLine+osm.orch.orderItemSpec.hierarchy=parentChildHierarchy" type="osm.orch.orderItemSpec.hierarchy" typeName="Order Item Hierarchy Element" kind="Element" name="parentChildHierarchy" path="/parentChildHierarchy"/>
+    </orderItemHierarchies>
+    <orderTemplateNodes>
+      <element xsi:type="osm:OrderTemplateNode" id="ois=SalesOrderLine+prov.order.node=/ControlData" type="prov.order.node" typeName="Order Node Element" kind="Element" name="ControlData" path="/ControlData"/>
+    </orderTemplateNodes>
+  </entity>
+</model:Model>

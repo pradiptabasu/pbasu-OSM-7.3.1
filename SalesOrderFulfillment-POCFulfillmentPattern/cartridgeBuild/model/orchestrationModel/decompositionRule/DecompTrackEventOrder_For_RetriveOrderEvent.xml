@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:decompositionRule xmlns:model="http://xmlns.oracle.com/communications/ordermanagement/model" name="DecompTrackEventOrder_For_RetriveOrderEvent" namespace="SalesOrderFulfillment">
+  <model:description>DecompTrackEventOrder_To_RetriveOrderEvent</model:description>
+  <model:orderItem>
+    <model:name>SalesOrderLine</model:name>
+    <model:namespace>SalesOrderFulfillment</model:namespace>
+  </model:orderItem>
+  <model:product>
+    <model:name>BusinessBBSpec</model:name>
+    <model:namespace>SalesOrderFulfillment</model:namespace>
+  </model:product>
+  <model:source>
+    <model:name>TrackEventBusinessFunction</model:name>
+    <model:namespace>SalesOrderFulfillment</model:namespace>
+  </model:source>
+  <model:target>
+    <model:name>RetriveOrderEvent</model:name>
+    <model:namespace>SalesOrderFulfillment</model:namespace>
+  </model:target>
+</model:decompositionRule>

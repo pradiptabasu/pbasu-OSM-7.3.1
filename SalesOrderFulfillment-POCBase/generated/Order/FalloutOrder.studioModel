@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://xmlns.oracle.com/communications/studio/model" xmlns:osm="http://xmlns.oracle.com/communications/studio/model/osm">
+  <metadata version="1.0.0" release="7.3.0"/>
+  <entity xsi:type="osm:Order" id="ord=FalloutOrder" type="ord" typeName="Order" name="FalloutOrder" resource="\SalesOrderFulfillment-POCBase\model\ORDER\FalloutOrder.order">
+    <displayName lang="default">FalloutOrder</displayName>
+    <note lang="default"/>
+    <project>
+      <relation ref="oprj=SalesOrderFulfillment-POCBase" type="Order and Service Management Project" name="Dependency">
+        <target name="SalesOrderFulfillment-POCBase" typeName="Order and Service Management Project"/>
+      </relation>
+    </project>
+    <orderTemplateNode>
+      <relation ref="ds=SalesOrderFulfillment-POCDataDictionary" type="Data Schema" name="Order Template Node" kind="Entity">
+        <target name="SalesOrderFulfillment-POCDataDictionary" typeName="Data Schema"/>
+      </relation>
+    </orderTemplateNode>
+    <creationTask>
+      <relation ref="mtsk=FalloutOrder-CreationTask" type="Manual Task" name="Creation Task" kind="Entity">
+        <target name="FalloutOrder-CreationTask" typeName="Manual Task"/>
+      </relation>
+    </creationTask>
+    <queryTask>
+      <relation ref="mtsk=FalloutOrderDetailsView" type="Manual Task" name="Query View" kind="Entity">
+        <target name="FalloutOrderDetailsView" typeName="Manual Task"/>
+      </relation>
+    </queryTask>
+    <defaultProcess>
+      <relation ref="pro=FalloutOrderProcess" type="Process" name="Default Process" kind="Entity">
+        <target name="FalloutOrderProcess" typeName="Process"/>
+      </relation>
+    </defaultProcess>
+    <roles>
+      <relation ref="rol=SalesOrderFulfillment-Role" type="Role" name="Permission" kind="Entity">
+        <target name="SalesOrderFulfillment-Role" typeName="Role"/>
+      </relation>
+    </roles>
+    <lifeCyclePolicy>
+      <relation ref="olp=SalesOrderFulfillment-LifeCyclePolicy" type="Order Lifecycle Policy" name="Policy" kind="Entity">
+        <target name="SalesOrderFulfillment-LifeCyclePolicy" typeName="Order Lifecycle Policy"/>
+      </relation>
+    </lifeCyclePolicy>
+    <orderTemplateNodes>
+      <element xsi:type="osm:OrderTemplateNode" id="ord=FalloutOrder+prov.order.node=/inputMessage" type="prov.order.node" typeName="Order Node Element" kind="Element" name="inputMessage" path="/inputMessage"/>
+    </orderTemplateNodes>
+    <rules>
+      <element xsi:type="osm:OrderRule" id="ord=FalloutOrder+prov.order.rule=6GxTWum3QP2wQLlK9f9Hfg" type="prov.order.rule" typeName="Order Template Rule Element" kind="Element" name="null_rule" path="null_rule"/>
+    </rules>
+  </entity>
+</model:Model>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:orderComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://xmlns.oracle.com/communications/ordermanagement/model" name="ProductValidateBusinessFunction" namespace="SalesOrderFulfillment">
+  <model:description>ProductValidateBusinessFunction</model:description>
+  <model:extends>
+    <model:name>COM_FulfillmentFunction</model:name>
+    <model:namespace>SalesOrderFulfillment</model:namespace>
+  </model:extends>
+  <model:componentId>
+    <model:textNodeExpression xsi:type="model:XqueryExpressionRuleType" enabled="true">
+      <model:xquery><![CDATA[declare namespace osm="http://xmlns.oracle.com/communications/ordermanagement/model";
+declare namespace prop="SalesOrderFulfillment";
+
+let $parentId:= fn:normalize-space(osm:properties/prop:RootLineId/text())
+return
+ $parentId
+
+
+   ]]></model:xquery>
+    </model:textNodeExpression>
+  </model:componentId>
+  <model:executedByTask>
+    <model:name>ProductValidateBusinessFunction_ProductValidateProcess</model:name>
+    <model:namespace>default</model:namespace>
+  </model:executedByTask>
+  <model:isExecutable>false</model:isExecutable>
+  <model:honorCalculatedDates>false</model:honorCalculatedDates>
+</model:orderComponentSpec>

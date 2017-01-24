@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://xmlns.oracle.com/communications/studio/model" xmlns:osm="http://xmlns.oracle.com/communications/studio/model/osm">
+  <metadata version="1.0.0" release="7.3.0"/>
+  <entity xsi:type="osm:OrderComponentSpecification" id="ocs=COM_FulfillmentFunction" type="ocs" typeName="Order Component Specification" name="COM_FulfillmentFunction" resource="\SalesOrderFulfillment-POCBase\model\FUNCTION\COM_FulfillmentFunction.orderComponentSpec">
+    <displayName lang="default">COM_FulfillmentFunction</displayName>
+    <note lang="default"/>
+    <project>
+      <relation ref="oprj=SalesOrderFulfillment-POCBase" type="Order and Service Management Project" name="Dependency">
+        <target name="SalesOrderFulfillment-POCBase" typeName="Order and Service Management Project"/>
+      </relation>
+    </project>
+    <componentElements>
+      <element xsi:type="osm:Component" id="ocs=COM_FulfillmentFunction+osm.orch.orderComponentSpec.element=6x8dNHhrRryK5ZN8MKQ4Ug" type="osm.orch.orderComponentSpec.element" typeName="Orchestration Component Element" kind="Element" name="COM_FulfillmentFunction" path="/COM_FulfillmentFunction">
+        <components>
+          <element xsi:type="osm:Component" id="ocs=ProductValidateBusinessFunction+osm.orch.orderComponentSpec.element=b5FuCqT4Sy2Ggj-XlrPgFQ" type="osm.orch.orderComponentSpec.element" typeName="Orchestration Component Element" kind="Element" name="ProductValidateBusinessFunction" path="/COM_FulfillmentFunction/ProductValidateBusinessFunction"/>
+          <element xsi:type="osm:Component" id="ocs=ProvisionBusinessFunction+osm.orch.orderComponentSpec.element=zvbTGkGxRSenGj4VZ4FZrg" type="osm.orch.orderComponentSpec.element" typeName="Orchestration Component Element" kind="Element" name="ProvisionBusinessFunction" path="/COM_FulfillmentFunction/ProvisionBusinessFunction"/>
+          <element xsi:type="osm:Component" id="ocs=TrackEventBusinessFunction+osm.orch.orderComponentSpec.element=LcLINyRAQ2yhr2YTnj7kTg" type="osm.orch.orderComponentSpec.element" typeName="Orchestration Component Element" kind="Element" name="TrackEventBusinessFunction" path="/COM_FulfillmentFunction/TrackEventBusinessFunction"/>
+        </components>
+      </element>
+    </componentElements>
+  </entity>
+</model:Model>

@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:orderRecognitionRule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://xmlns.oracle.com/communications/ordermanagement/model" name="SalesOrderRecognitionRule" namespace="SalesOrderFulfillment">
+  <model:description>SalesOrderRecognitionRule</model:description>
+  <model:recognitionRule xsi:type="model:XqueryExpressionRuleType" enabled="true">
+    <model:xquery><![CDATA[declare namespace ws="http://xmlns.oracle.com/communications/ordermanagement";
+.//ws:OrderHeader/ws:Mode/text() = 'Deliver']]></model:xquery>
+  </model:recognitionRule>
+  <model:relevancy>5</model:relevancy>
+  <model:storageRule xsi:type="model:XqueryExpressionRuleType" enabled="true">
+    <model:xquery><![CDATA[<inputMessage>{.}</inputMessage>]]></model:xquery>
+  </model:storageRule>
+  <model:createOrderSpecification>
+    <model:cartridge>
+      <model:name>
+        <model:name>COM-POC-Solution</model:name>
+        <model:namespace>COM-POC-Solution</model:namespace>
+      </model:name>
+    </model:cartridge>
+    <model:orderType>
+      <model:name>SalesOrderFulfillment</model:name>
+      <model:namespace>COM-POC-Solution</model:namespace>
+    </model:orderType>
+    <model:orderSource>
+      <model:name>SalesOrderFulfillment</model:name>
+      <model:namespace>COM-POC-Solution</model:namespace>
+    </model:orderSource>
+    <model:creationView>
+      <model:name>SalesOrderFulfillment-CreationTask</model:name>
+      <model:namespace>COM-POC-Solution</model:namespace>
+    </model:creationView>
+  </model:createOrderSpecification>
+  <model:orderDataRule xsi:type="model:XqueryExpressionRuleType" enabled="true">
+    <model:xquery><![CDATA[declare namespace ord="http://xmlns.oracle.com/communications/ordermanagement";
+declare namespace log = "java:org.apache.commons.logging.Log";
+
+
+declare function local:adress($address)
+{
+let $x:=$address
+let $nodeName:=fn:local-name($x)
+
+return element {$nodeName} {
+element {'AddressID'}{$address/ord:AddressID/text()},
+element {'StreetName'}{$address/ord:StreetName/text()},
+element {'ZipCode'}{$address/ord:ZipCode/text()},
+element {'Country'}{$address/ord:Country/text()},
+element {'City'}{$address/ord:City/text()},
+element {'Village'}{$address/ord:Village/text()},
+element {'HouseLetter'}{$address/ord:HouseLetter/text()},
+element {'Floor'}{$address/ord:Floor/text()},
+element {'ApartmentNo'}{$address/ord:ApartmentNo/text()}, 
+element {'HouseKey'}{$address/ord:HouseKey/text()},
+element {'Side'}{$address/ord:Side/text()},
+element {'Pob'}{$address/ord:Pob/text()} 	 						
+}
+      			
+	
+	
+};
+declare function local:residentalInfo($residentalInfo){
+let $x:=$residentalInfo
+let $nodeName:=fn:local-name($x)
+
+return element {$nodeName} {
+element {'CPRno'}{''},
+element {'IdNo'}{''},
+element {'IDType'}{''},
+element {'FirstName'}{''},
+element {'LastName'}{''},
+element {'Phone'}{''},
+element {'Email'}{''} 	 						
+}
+};
+declare function local:companyInfo($companyInfo){
+
+let $x:=$companyInfo
+let $nodeName:=fn:local-name($x)
+
+return element {$nodeName} {
+element{'CVRNo'} {''},
+element {'CompanyName'}{''},
+element {'Department'} {''},
+element {'Email'} {''},
+element {'Phone'} {''}
+
+}
+};
+
+declare function local:priceAgreement($orderprice){
+for $x in $orderprice
+return
+<PriceAgreementNumber>
+{$x/text()}
+</PriceAgreementNumber>
+};
+
+declare function local:orderLines($orderLines){
+for $x in $orderLines
+return
+<OrderLines>
+{
+local:orderLineItem($x/ord:OrderLine)
+}
+</OrderLines>
+};
+declare function local:orderLineItem($orderLine)
+{
+    for $x in $orderLine
+        return 
+            <OrderLine>
+				<OrderLineId>
+					{$x/ord:OrderLineId/text()}
+				</OrderLineId>
+				<RootOrderItemId>
+					{$x/ord:RootOrderItemId/text()}
+				</RootOrderItemId>
+				<ParentOrderLineId>
+					{$x/ord:ParentOrderLineId/text()}
+				</ParentOrderLineId>
+				<ProductId>
+					{$x/ord:ProductId/text()}
+				</ProductId>
+				<ProductName>
+							{$x/ord:ProductName/text()}
+				</ProductName>	
+				<ProductClass>
+						{$x/ord:ProductClass/text()}
+				</ProductClass>				
+				<ProductCategory>
+					{$x/ord:ProductCategory/text()}
+				</ProductCategory>
+				<OrderLineAction>
+					{$x/ord:OrderLineAction/text()}
+				</OrderLineAction>
+      		</OrderLine>
+};
+
+
+let $order := fn:root(.)//ord:Order
+let $orderLines := $order/ord:OrderLines
+let $orderHeader := $order/ord:OrderHeader
+let $orderConfirmation :=$orderHeader/ord:OrderConfirmation
+let $fulfillmentModeCode := $orderHeader/ord:Mode/text()
+let $orderType := $orderHeader/ord:OrderType/text()
+let $catalog := $orderHeader/ord:Catalog/text()
+let $rightOfCancellation := $orderHeader/ord:RightOfCancellation/text()
+let $salesOrderNumber := $orderHeader/ord:SalesOrderNumber/text()
+let $referenceKey :=$orderHeader/ord:CustomerReference/text()
+let $salesChannel := $orderHeader/ord:SalesChannel
+let $customerHeader := $order/ord:CustomerHeader
+let $customerInfo := $customerHeader/ord:CustomerInfo
+let $orderDetails:=$order/ord:OrderDetails
+let $billingDetails:=$orderDetails/ord:BillingDetails
+let $userDetails := $orderDetails/ord:UserDetails
+let $shipmentDetails:=$orderDetails/ord:ShipmentDetails
+let $installationDetails := $orderDetails/ord:InstallationDetails
+let $orderprice:=$orderDetails/ord:OrderPrice
+let $OrderLine := $orderLines/ord:OrderLine
+let $ProductClass := $OrderLine/ord:ProductClass
+let $ProductName := $OrderLine/ord:ProductName
+let $ProductCategory := $OrderLine/ord:ProductCategory
+let $OrderLineAction := $OrderLine/ord:OrderLineAction
+
+return
+    <_root>
+        <Order>
+        	<OrderHeader>
+        		<SalesOrderNumber>
+        			{$salesOrderNumber}
+        		</SalesOrderNumber>
+        		<ReferenceKey>
+					{$referenceKey}
+        		</ReferenceKey>
+        		<SalesChannel>
+        			<ID>
+        				{$salesChannel/ord:ID/text()}
+        			</ID>
+        			<Name>
+        				{$salesChannel/ord:Name/text()}
+        			</Name>
+        			<Salesman>
+						{$salesChannel/ord:Salesman/text()}
+        			</Salesman>
+        			<SalesmanEmail>
+						{$salesChannel/ord:SalesmanEmail/text()}
+        			</SalesmanEmail>
+        			<FulfillmentId>
+						{$salesChannel/ord:FulfillmentId/text()}
+        			</FulfillmentId>
+        			<SystemId>
+						{$salesChannel/ord:SystemId/text()}
+        			</SystemId>
+        		</SalesChannel>
+        		<OrderType>
+					{$orderType}   		
+        		</OrderType>
+        		<Catalog>
+					{$catalog}
+        		</Catalog>
+        		<Mode>
+        			{$fulfillmentModeCode}
+        		</Mode>
+        		<OrderCreationDate>
+        			{data($salesChannel/ord:OrderCreationDate)}
+        		</OrderCreationDate>
+        		{
+	        		if (fn:exists($salesChannel/ord:RequestedDeliveryDate)) then
+	        			<RequestedDeliveryDate>
+	        				{data($salesChannel/ord:RequestedDeliveryDate)}
+	        			</RequestedDeliveryDate>
+	        		else ()
+        		}
+        		<RightOfCancellation>
+					{$rightOfCancellation}
+        		</RightOfCancellation>
+        		<OrderConfirmation>                           
+                <Email>
+             {$orderConfirmation/ord:Email/text()}
+				</Email>
+                <ContactNo>
+{$orderConfirmation/ord:ContactNo/text()}
+</ContactNo>
+                <ContactName>
+{$orderConfirmation/ord:ContactName/text()}
+</ContactName>
+                <SignatureDate>
+{data($orderConfirmation/ord:SignatureDate)}
+</SignatureDate>
+				</OrderConfirmation>
+        	</OrderHeader>
+        	<CustomerHeader>
+        		<CustomerType>
+        			{$customerHeader/ord:CustomerType/text()}
+        		</CustomerType>
+        		<CustomerName>
+        			{$customerHeader/ord:CustomerName/text()}
+        		</CustomerName>
+        		<ContractCustomer>
+        		{$customerHeader/ord:ContractCustomer/text()}
+				</ContractCustomer>
+				<CustomerInfo>
+				{
+				local:companyInfo($customerHeader/ord:CustomerInfo/ord:CompanyInfo)
+				}
+				{
+				local:residentalInfo($customerHeader/ord:CustomerInfo/ord:ResidentialInfo)
+				}
+				{
+				local:adress($customerHeader/ord:CustomerInfo/ord:Address)
+				}
+				
+				
+				</CustomerInfo>
+        		
+        	</CustomerHeader>
+									
+		<AccountDetails>
+				<AccountInfo>
+					<AccountType></AccountType>
+					<AccountNo></AccountNo>
+					<CustomerName></CustomerName>
+					<CustomerNumber></CustomerNumber>
+					<ParentAccountNo></ParentAccountNo>
+					<TargetAccountNo></TargetAccountNo>
+					<OriginalAccountNo></OriginalAccountNo>
+					<Segmentation></Segmentation>	   
+				</AccountInfo>	
+			</AccountDetails>
+			<OrderDetails>
+			<ERegistrationDetails>
+                     <InvoiceInfo>
+                        <InvoiceRemark>some invoice  remark on LID</InvoiceRemark>
+                     </InvoiceInfo>
+			</ERegistrationDetails>
+			<BillingDetails>
+				{
+				local:companyInfo($billingDetails/ord:CompanyPayerInfo)
+				}
+				{
+				local:residentalInfo($billingDetails/ord:ResidentialPayerInfo)
+				}
+				
+				{
+				local:adress($billingDetails/ord:Address)
+				}
+				
+			</BillingDetails>
+			
+			<UserDetails>
+			{
+				local:companyInfo($userDetails/ord:CompanyUserInfo)
+				}
+				{
+				local:residentalInfo($userDetails/ord:ResidentialUserInfo)
+				}
+			{
+				local:adress($userDetails/ord:Address)
+				}
+			</UserDetails>
+			<ShipmentDetails>
+			{
+				local:companyInfo($shipmentDetails/ord:CompanyShipInfo)
+				}
+				{
+				local:residentalInfo($shipmentDetails/ord:ResidentialShipInfo)
+				}
+			{
+				local:adress($shipmentDetails/ord:ShipAddress)
+				}
+			</ShipmentDetails>
+			<InstallationDetails>
+			<InstallationInfo>
+					<AccessPtName>{$installationDetails/ord:InstallationInfo/ord:AccessPtname/text()}</AccessPtName> 
+
+					<NewAccess>{$installationDetails/ord:InstallationInfo/ord:NewAccess/text()}</NewAccess>		
+					<AccessAction>{$installationDetails/ord:InstallationInfo/ord:AccessTakeoverAction/text()}</AccessAction>   
+				</InstallationInfo>
+				
+			{
+				local:adress($installationDetails/ord:InstallationAddress)
+				}
+			</InstallationDetails>
+			<OrderPrice>
+			{local:priceAgreement($orderprice/ord:priceAgreementNumber)}
+			</OrderPrice>
+        	</OrderDetails>
+
+                {
+      	        local:orderLines($orderLines)
+				}
+
+        </Order>
+
+	    
+    </_root>
+]]></model:xquery>
+  </model:orderDataRule>
+</model:orderRecognitionRule>

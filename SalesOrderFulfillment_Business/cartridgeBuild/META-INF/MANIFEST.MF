@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: SalesOrderFulfillment_Business
+Bundle-Name: SalesOrderFulfillment_Business
+Bundle-Description: SalesOrderFulfillment_Business
+Bundle-Version: 1.0.0.0.0
+Bundle-BuildTime: 2017-01-23 09:02:19
+Bundle-BuildNumber: 324
+Bundle-Category: OSM
+Bundle-Vendor: OSM Cartridge Provider
+Bundle-RequiredExecutionEnvironment: Oracle-Communications/OSM-7.3.1,
+ JavaSE-1.7
+Bundle-RequiredTargetVersion: 7.3.1

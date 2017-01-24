@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:orderRecognitionRule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://xmlns.oracle.com/communications/ordermanagement/model" name="OrderFallout_ORP_RecognitionRule" namespace="SalesOrderFulfillment">
+  <model:description>OrderFallout_ORP_RecognitionRule</model:description>
+  <model:recognitionRule xsi:type="model:XqueryExpressionRuleType" enabled="true">
+    <model:xquery><![CDATA[true()]]></model:xquery>
+  </model:recognitionRule>
+  <model:relevancy>0</model:relevancy>
+  <model:storageRule xsi:type="model:XqueryExpressionRuleType" enabled="true">
+    <model:xquery><![CDATA[<inputMessage>{.}</inputMessage>]]></model:xquery>
+  </model:storageRule>
+  <model:createOrderSpecification>
+    <model:cartridge>
+      <model:name>
+        <model:name>COM-POC-Solution</model:name>
+        <model:namespace>COM-POC-Solution</model:namespace>
+      </model:name>
+    </model:cartridge>
+    <model:orderType>
+      <model:name>FalloutOrder</model:name>
+      <model:namespace>COM-POC-Solution</model:namespace>
+    </model:orderType>
+    <model:orderSource>
+      <model:name>FalloutOrder</model:name>
+      <model:namespace>COM-POC-Solution</model:namespace>
+    </model:orderSource>
+    <model:creationView>
+      <model:name>FalloutOrder-CreationTask</model:name>
+      <model:namespace>COM-POC-Solution</model:namespace>
+    </model:creationView>
+  </model:createOrderSpecification>
+  <model:orderDataRule xsi:type="model:XqueryExpressionRuleType" enabled="true">
+    <model:xquery><![CDATA[true()]]></model:xquery>
+  </model:orderDataRule>
+  <model:failOrder>
+    <model:reason lang="en">Fail Order</model:reason>
+  </model:failOrder>
+</model:orderRecognitionRule>

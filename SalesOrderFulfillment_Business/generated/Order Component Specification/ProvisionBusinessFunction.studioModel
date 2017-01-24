@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://xmlns.oracle.com/communications/studio/model" xmlns:osm="http://xmlns.oracle.com/communications/studio/model/osm">
+  <metadata version="1.0.0" release="7.3.0"/>
+  <entity xsi:type="osm:OrderComponentSpecification" id="ocs=ProvisionBusinessFunction" type="ocs" typeName="Order Component Specification" name="ProvisionBusinessFunction" resource="\SalesOrderFulfillment_Business\model\FUNCTION\ProvisionBusinessFunction.orderComponentSpec">
+    <displayName lang="default">ProvisionBusinessFunction</displayName>
+    <note lang="default"/>
+    <project>
+      <relation ref="oprj=SalesOrderFulfillment_Business" type="Order and Service Management Project" name="Dependency">
+        <target name="SalesOrderFulfillment_Business" typeName="Order and Service Management Project"/>
+      </relation>
+    </project>
+    <process>
+      <relation ref="pro=ProvisionOrderProcess" type="Process" name="Process" kind="Entity">
+        <target name="ProvisionOrderProcess" typeName="Process"/>
+      </relation>
+    </process>
+    <componentElements>
+      <element xsi:type="osm:Component" id="ocs=ProvisionBusinessFunction+osm.orch.orderComponentSpec.element=zvbTGkGxRSenGj4VZ4FZrg" type="osm.orch.orderComponentSpec.element" typeName="Orchestration Component Element" kind="Element" name="ProvisionBusinessFunction" path="/COM_FulfillmentFunction/ProvisionBusinessFunction"/>
+    </componentElements>
+    <orderTemplateNodes>
+      <element xsi:type="osm:OrderTemplateNode" id="ocs=ProvisionBusinessFunction+prov.order.node=/ControlData" type="prov.order.node" typeName="Order Node Element" kind="Element" name="ControlData" path="/ControlData"/>
+    </orderTemplateNodes>
+    <extend>
+      <relation ref="ocs=COM_FulfillmentFunction" type="Order Component Specification" name="Extends" kind="Entity">
+        <target name="COM_FulfillmentFunction" typeName="Order Component Specification"/>
+      </relation>
+    </extend>
+  </entity>
+</model:Model>

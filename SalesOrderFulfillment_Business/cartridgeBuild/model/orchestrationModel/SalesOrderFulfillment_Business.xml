@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:orchestrationModel xmlns:include="http://www.w3.org/2001/XInclude" xmlns:model="http://xmlns.oracle.com/communications/ordermanagement/model" name="SalesOrderFulfillment_Business" namespace="SalesOrderFulfillment_Business">
+  <model:description>SalesOrderFulfillment_Business</model:description>
+  <include:include href="orderComponentSpec/ProductValidateBusinessFunction.xml"/>
+  <include:include href="orderComponentSpec/ProvisionBusinessFunction.xml"/>
+  <include:include href="orderComponentSpec/TrackEventBusinessFunction.xml"/>
+</model:orchestrationModel>

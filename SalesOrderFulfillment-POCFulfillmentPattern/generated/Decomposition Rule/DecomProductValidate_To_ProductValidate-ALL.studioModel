@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://xmlns.oracle.com/communications/studio/model" xmlns:osm="http://xmlns.oracle.com/communications/studio/model/osm">
+  <metadata version="1.0.0" release="7.3.0"/>
+  <entity xsi:type="osm:DecompositionRule" id="dr=DecomProductValidate_To_ProductValidate-ALL" type="dr" typeName="Decomposition Rule" name="DecomProductValidate_To_ProductValidate-ALL" resource="\SalesOrderFulfillment-POCFulfillmentPattern\model\DECOMPRULE\DecomProductValidate_To_ProductValidate-ALL.decompositionRule">
+    <displayName lang="default">DecomProductValidate_To_ProductValidate-ALL</displayName>
+    <note lang="default"/>
+    <project>
+      <relation ref="oprj=SalesOrderFulfillment-POCFulfillmentPattern" type="Order and Service Management Project" name="Dependency">
+        <target name="SalesOrderFulfillment-POCFulfillmentPattern" typeName="Order and Service Management Project"/>
+      </relation>
+    </project>
+    <orderItem>
+      <relation ref="ois=SalesOrderLine" type="Order Item Specification" name="Order Item" kind="Entity">
+        <target name="SalesOrderLine" typeName="Order Item Specification"/>
+      </relation>
+    </orderItem>
+    <sources>
+      <relation ref="ocs=ProductValidateBusinessFunction" type="Order Component Specification" name="Source" kind="Entity">
+        <target name="ProductValidateBusinessFunction" typeName="Order Component Specification"/>
+      </relation>
+    </sources>
+    <targets>
+      <relation ref="ocs=ProductValidate-ALL" type="Order Component Specification" name="Target" kind="Entity">
+        <target name="ProductValidate-ALL" typeName="Order Component Specification"/>
+      </relation>
+    </targets>
+    <fulfillmentPatterns>
+      <relation ref="ofp=BusinessBBSpec" type="Orchestration Fulfillment Pattern" name="Fulfillment Pattern" kind="Entity">
+        <target name="BusinessBBSpec" typeName="Orchestration Fulfillment Pattern"/>
+      </relation>
+    </fulfillmentPatterns>
+  </entity>
+</model:Model>

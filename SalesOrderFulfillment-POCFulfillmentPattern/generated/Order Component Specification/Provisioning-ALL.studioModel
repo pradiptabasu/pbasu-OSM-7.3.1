@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://xmlns.oracle.com/communications/studio/model" xmlns:osm="http://xmlns.oracle.com/communications/studio/model/osm">
+  <metadata version="1.0.0" release="7.3.0"/>
+  <entity xsi:type="osm:OrderComponentSpecification" id="ocs=Provisioning-ALL" type="ocs" typeName="Order Component Specification" name="Provisioning-ALL" resource="\SalesOrderFulfillment-POCFulfillmentPattern\model\SYSTEM\Provisioning-ALL.orderComponentSpec">
+    <displayName lang="default">Provisioning-ALL</displayName>
+    <note lang="default"/>
+    <project>
+      <relation ref="oprj=SalesOrderFulfillment-POCFulfillmentPattern" type="Order and Service Management Project" name="Dependency">
+        <target name="SalesOrderFulfillment-POCFulfillmentPattern" typeName="Order and Service Management Project"/>
+      </relation>
+    </project>
+    <componentElements>
+      <element xsi:type="osm:Component" id="ocs=Provisioning-ALL+osm.orch.orderComponentSpec.element=BKThJ54QQKiJv5mkx4-SOA" type="osm.orch.orderComponentSpec.element" typeName="Orchestration Component Element" kind="Element" name="Provisioning-ALL" path="/COM_FulfillmentSystem/Provisioning-ALL"/>
+    </componentElements>
+    <extend>
+      <relation ref="ocs=COM_FulfillmentSystem" type="Order Component Specification" name="Extends" kind="Entity">
+        <target name="COM_FulfillmentSystem" typeName="Order Component Specification"/>
+      </relation>
+    </extend>
+  </entity>
+</model:Model>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:orderComponentSpec xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://xmlns.oracle.com/communications/ordermanagement/model" name="ProductValidate-ALL" namespace="SalesOrderFulfillment">
+  <model:description>ProductValidate-ALL</model:description>
+  <model:extends>
+    <model:name>COM_FulfillmentSystem</model:name>
+    <model:namespace>SalesOrderFulfillment</model:namespace>
+  </model:extends>
+  <model:componentId>
+    <model:textNodeExpression xsi:type="model:XqueryExpressionRuleType" enabled="true">
+      <model:xquery><![CDATA[declare namespace ws="http://xmlns.oracle.com/communications/ordermanagement";   
+let $input := .
+let $CType := $input/ws:OrderLines/ws:OrderLine/ws:RootOrderItemId/text()
+return
+$CType]]></model:xquery>
+    </model:textNodeExpression>
+  </model:componentId>
+  <model:isExecutable>false</model:isExecutable>
+  <model:honorCalculatedDates>false</model:honorCalculatedDates>
+</model:orderComponentSpec>

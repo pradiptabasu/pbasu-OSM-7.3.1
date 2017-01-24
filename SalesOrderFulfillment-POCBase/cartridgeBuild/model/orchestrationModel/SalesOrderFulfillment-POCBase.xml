@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:orchestrationModel xmlns:include="http://www.w3.org/2001/XInclude" xmlns:model="http://xmlns.oracle.com/communications/ordermanagement/model" name="SalesOrderFulfillment-POCBase" namespace="SalesOrderFulfillment-POCBase">
+  <model:description>SalesOrderFulfillment-POCBase</model:description>
+  <include:include href="orderItemSpec/SalesOrderLine.xml"/>
+  <include:include href="orchestrationSequence/SalesOrderFulfillmentOrchestrationSequence.xml"/>
+  <include:include href="orderComponentSpec/COM_FulfillmentFunction.xml"/>
+  <include:include href="orderComponentSpec/COM_FulfillmentGranularity.xml"/>
+  <include:include href="orderComponentSpec/COM_FulfillmentSystem.xml"/>
+  <include:include href="fulfillmentMode/Deliver.xml"/>
+</model:orchestrationModel>

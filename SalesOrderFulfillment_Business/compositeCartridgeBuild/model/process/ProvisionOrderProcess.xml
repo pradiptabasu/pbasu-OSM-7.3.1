@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<process xmlns="http://www.metasolv.com/OMS/OrderModel/2002/06/25" name="ProvisionOrderProcess" workstream="false">
+  <description>ProvisionOrderProcess</description>
+  <expectedDuration>P0Y0M0DT0H0M86400S</expectedDuration>
+  <startActivity>ProvisionTask</startActivity>
+  <activity name="ProvisionTask">
+    <task>ProvisionTask</task>
+    <description>ProvisionTask</description>
+    <inputType>ANY</inputType>
+    <processHistorySummary>true</processHistorySummary>
+  </activity>
+  <activity name="ProvisionTaskAuto">
+    <task>ProvisionTaskAuto</task>
+    <description>ProvisionTaskAuto</description>
+    <inputType>ANY</inputType>
+    <processHistorySummary>true</processHistorySummary>
+  </activity>
+  <transition>
+    <from>
+      <activity>ProvisionTask</activity>
+      <status>next</status>
+    </from>
+    <to>ProvisionTaskAuto</to>
+    <mandatoryCheck>true</mandatoryCheck>
+  </transition>
+  <transition>
+    <from>
+      <activity>ProvisionTaskAuto</activity>
+      <status>ErrorState</status>
+    </from>
+    <to>ProvisionTask</to>
+    <mandatoryCheck>false</mandatoryCheck>
+  </transition>
+</process>

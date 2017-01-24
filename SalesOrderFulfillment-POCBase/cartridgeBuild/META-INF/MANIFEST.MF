@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: SalesOrderFulfillment-POCBase
+Bundle-Name: SalesOrderFulfillment-POCBase
+Bundle-Description: SalesOrderFulfillment-POCBase
+Bundle-Version: 1.1.0.0.0
+Bundle-BuildTime: 2017-01-23 09:02:26
+Bundle-BuildNumber: 37
+Bundle-Category: OSM
+Bundle-Vendor: OSM Cartridge Provider
+Bundle-RequiredExecutionEnvironment: Oracle-Communications/OSM-7.3.1,
+ JavaSE-1.7
+Bundle-RequiredTargetVersion: 7.3.1

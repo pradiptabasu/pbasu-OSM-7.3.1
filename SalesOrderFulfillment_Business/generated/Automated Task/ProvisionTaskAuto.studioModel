@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://xmlns.oracle.com/communications/studio/model" xmlns:osm="http://xmlns.oracle.com/communications/studio/model/osm">
+  <metadata version="1.0.0" release="7.3.0"/>
+  <entity xsi:type="osm:AutomatedTask" id="atsk=ProvisionTaskAuto" type="atsk" typeName="Automated Task" name="ProvisionTaskAuto" resource="\SalesOrderFulfillment_Business\model\PROCESS\ProvisionTaskAuto.automationTask">
+    <displayName lang="default">ProvisionTaskAuto</displayName>
+    <note lang="default"/>
+    <project>
+      <relation ref="oprj=SalesOrderFulfillment_Business" type="Order and Service Management Project" name="Dependency">
+        <target name="SalesOrderFulfillment_Business" typeName="Order and Service Management Project"/>
+      </relation>
+    </project>
+    <order>
+      <relation ref="ord=SalesOrderFulfillment" type="Order" name="Order" kind="Entity">
+        <target name="SalesOrderFulfillment" typeName="Order"/>
+      </relation>
+    </order>
+    <taskDataElements>
+      <element xsi:type="osm:TaskData" id="atsk=ProvisionTaskAuto+prov.task.data.node=/ControlData" type="prov.task.data.node" typeName="Task Data Element" kind="Element" name="ControlData" path="/ControlData"/>
+      <element xsi:type="osm:TaskData" id="atsk=ProvisionTaskAuto+prov.task.data.node=/Order" type="prov.task.data.node" typeName="Task Data Element" kind="Element" name="Order" path="/Order"/>
+    </taskDataElements>
+  </entity>
+</model:Model>

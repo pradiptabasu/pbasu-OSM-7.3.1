@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Manifest xmlns="http://www.metasolv.com/CartridgeManifest/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Identification>
+        <Name>COM-POC-Solution</Name>
+        <Version>1.1.0.0.0</Version>
+        <Type>OSM</Type>
+        <BuildID>37</BuildID>
+    </Identification>
+    <Component>
+        <Type>ModelComponentType</Type>
+        <Location>/OSMModel.xml</Location>
+    </Component>
+    <Component>
+        <Type>UserWorkgroupComponentType</Type>
+        <Location>/userConfig/userConfig.xml</Location>
+    </Component>
+    <Component>
+        <Type>xmlCatalogType</Type>
+        <Location>xmlCatalogs/catalogs.zip</Location>
+    </Component>
+    <Component>
+        <Type>ResourceType</Type>
+        <Location>resources/resources.zip</Location>
+    </Component>
+    <Component>
+        <Type>ReferencedCartridgeType</Type>
+        <Location>/cartridges/SalesOrderFulfillment_Business.par</Location>
+    </Component>
+    <Component>
+        <Type>ReferencedCartridgeType</Type>
+        <Location>/cartridges/SalesOrderFulfillment-POCBase.par</Location>
+    </Component>
+    <Component>
+        <Type>ReferencedCartridgeType</Type>
+        <Location>/cartridges/SalesOrderFulfillment-POCDataDictionary.par</Location>
+    </Component>
+    <Component>
+        <Type>ReferencedCartridgeType</Type>
+        <Location>/cartridges/SalesOrderFulfillment-POCFulfillmentPattern.par</Location>
+    </Component>
+    <Component>
+        <Type>ReferencedCartridgeType</Type>
+        <Location>/cartridges/SalesOrderFulfillment-POCRecognitionRule.par</Location>
+    </Component>
+</Manifest>

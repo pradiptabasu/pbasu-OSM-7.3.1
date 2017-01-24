@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://xmlns.oracle.com/communications/studio/model" xmlns:osm="http://xmlns.oracle.com/communications/studio/model/osm">
+  <metadata version="1.0.0" release="7.3.0"/>
+  <entity xsi:type="osm:OrchestrationStage" id="ost=ProcessingGranularityStage" type="ost" typeName="Orchestration Stage" name="ProcessingGranularityStage" resource="\SalesOrderFulfillment-POCBase\model\STAGE\ProcessingGranularityStage.orchestrationStage">
+    <displayName lang="default">ProcessingGranularityStage</displayName>
+    <note lang="default"/>
+    <project>
+      <relation ref="oprj=SalesOrderFulfillment-POCBase" type="Order and Service Management Project" name="Dependency">
+        <target name="SalesOrderFulfillment-POCBase" typeName="Order and Service Management Project"/>
+      </relation>
+    </project>
+    <dependOnOrchestrationStages>
+      <relation ref="ost=FulfillmentSystemStage" type="Orchestration Stage" name="UpStream" kind="Entity">
+        <target name="FulfillmentSystemStage" typeName="Orchestration Stage"/>
+      </relation>
+    </dependOnOrchestrationStages>
+    <producesOrderComponent>
+      <relation ref="ocs=COM_FulfillmentGranularity" type="Order Component Specification" name="Produce" kind="Entity">
+        <target name="COM_FulfillmentGranularity" typeName="Order Component Specification"/>
+      </relation>
+    </producesOrderComponent>
+  </entity>
+</model:Model>

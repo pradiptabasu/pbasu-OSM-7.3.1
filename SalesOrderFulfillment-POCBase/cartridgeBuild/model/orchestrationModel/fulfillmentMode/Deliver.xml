@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:fulfillmentMode xmlns:model="http://xmlns.oracle.com/communications/ordermanagement/model" name="Deliver" namespace="SalesOrderFulfillment">
+  <model:description>Deliver</model:description>
+</model:fulfillmentMode>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://xmlns.oracle.com/communications/studio/model" xmlns:osm="http://xmlns.oracle.com/communications/studio/model/osm">
+  <metadata version="1.0.0" release="7.3.0"/>
+  <entity xsi:type="osm:OrchestrationSequence" id="osq=SalesOrderFulfillmentOrchestrationSequence" type="osq" typeName="Orchestration Sequence" name="SalesOrderFulfillmentOrchestrationSequence" resource="\SalesOrderFulfillment-POCBase\model\ORCHESTRATION-SEQUENCE\SalesOrderFulfillmentOrchestrationSequence.orchestrationSequence">
+    <displayName lang="default">SalesOrderFulfillmentOrchestrationSequence</displayName>
+    <note lang="default"/>
+    <project>
+      <relation ref="oprj=SalesOrderFulfillment-POCBase" type="Order and Service Management Project" name="Dependency">
+        <target name="SalesOrderFulfillment-POCBase" typeName="Order and Service Management Project"/>
+      </relation>
+    </project>
+    <orderItem>
+      <relation ref="ois=SalesOrderLine" type="Order Item Specification" name="Order Item" kind="Entity">
+        <target name="SalesOrderLine" typeName="Order Item Specification"/>
+      </relation>
+    </orderItem>
+    <orchestrationStages>
+      <relation ref="ost=FulfillmentFunctionStage" type="Orchestration Stage" name="Stage" kind="Entity">
+        <target name="FulfillmentFunctionStage" typeName="Orchestration Stage"/>
+      </relation>
+      <relation ref="ost=FulfillmentSystemStage" type="Orchestration Stage" name="Stage" kind="Entity">
+        <target name="FulfillmentSystemStage" typeName="Orchestration Stage"/>
+      </relation>
+      <relation ref="ost=ProcessingGranularityStage" type="Orchestration Stage" name="Stage" kind="Entity">
+        <target name="ProcessingGranularityStage" typeName="Orchestration Stage"/>
+      </relation>
+    </orchestrationStages>
+  </entity>
+</model:Model>

@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:data="http://xmlns.oracle.com/communications/studio/model/data" xmlns:model="http://xmlns.oracle.com/communications/studio/model">
+  <metadata version="1.0.0" release="7.3.0"/>
+  <entity xsi:type="data:DataSchema" id="ds=SalesOrderFulfillment_Business" type="ds" typeName="Data Schema" name="SalesOrderFulfillment_Business" resource="\SalesOrderFulfillment_Business\dataDictionary\SalesOrderFulfillment_Business.xsd">
+    <displayName lang="default">SalesOrderFulfillment_Business</displayName>
+    <note lang="default"/>
+    <project>
+      <relation ref="oprj=SalesOrderFulfillment_Business" type="Order and Service Management Project" name="Dependency">
+        <target name="SalesOrderFulfillment_Business" typeName="Order and Service Management Project"/>
+      </relation>
+    </project>
+    <dataElements>
+      <element id="ds=SalesOrderFulfillment_Business+dataElement=ProductValidateBusinessFunction" type="dataElement" typeName="Schema Element" kind="Element" name="ProductValidateBusinessFunction" path="/ProductValidateBusinessFunction">
+        <displayName lang="default">Product Validate Business Function</displayName>
+        <minOccurs inherited="true">0</minOccurs>
+        <maxOccurs inherited="false">-1</maxOccurs>
+        <defaultValue inherited="true"></defaultValue>
+        <key inherited="false"></key>
+        <abstract inherited="false">false</abstract>
+        <deprecated inherited="false">false</deprecated>
+        <internal inherited="false">false</internal>
+        <sensitive inherited="true">false</sensitive>
+        <base>
+          <relation ref="ds=SalesOrderFulfillment-POCDataDictionary+dataElement=OrderComponent" type="Schema Element" name="Type" kind="Element">
+            <target name="OrderComponent" typeName="Schema Element"/>
+            <inEntity name="SalesOrderFulfillment-POCDataDictionary" typeName="Data Schema"/>
+          </relation>
+        </base>
+        <dataElements>
+          <element id="ds=SalesOrderFulfillment_Business+dataElement=ProductValidateBusinessFunction/componentKey" type="dataElement" typeName="Schema Element" kind="Element" name="componentKey" path="/ProductValidateBusinessFunction/componentKey" inherited="true">
+            <displayName lang="default">Component Key</displayName>
+            <minOccurs inherited="false">0</minOccurs>
+            <maxOccurs inherited="false">1</maxOccurs>
+            <defaultValue inherited="false"></defaultValue>
+            <key inherited="false"></key>
+            <abstract inherited="false">false</abstract>
+            <deprecated inherited="false">false</deprecated>
+            <internal inherited="false">false</internal>
+            <sensitive inherited="false">false</sensitive>
+            <minLength inherited="false">0</minLength>
+            <maxLength inherited="false">-1</maxLength>
+            <dataElements/>
+            <primitiveType>string</primitiveType>
+          </element>
+          <element id="ds=SalesOrderFulfillment_Business+dataElement=ProductValidateBusinessFunction/orderItem" type="dataElement" typeName="Schema Element" kind="Element" name="orderItem" path="/ProductValidateBusinessFunction/orderItem" inherited="true">
+            <displayName lang="default">Order Item</displayName>
+            <minOccurs inherited="false">0</minOccurs>
+            <maxOccurs inherited="false">-1</maxOccurs>
+            <defaultValue inherited="false"></defaultValue>
+            <key inherited="false"></key>
+            <abstract inherited="false">false</abstract>
+            <deprecated inherited="false">false</deprecated>
+            <internal inherited="false">false</internal>
+            <sensitive inherited="false">false</sensitive>
+            <dataElements/>
+            <primitiveType>structure</primitiveType>
+          </element>
+          <element id="ds=SalesOrderFulfillment_Business+dataElement=ProductValidateBusinessFunction/calculatedStartDate" type="dataElement" typeName="Schema Element" kind="Element" name="calculatedStartDate" path="/ProductValidateBusinessFunction/calculatedStartDate" inherited="true">
+            <displayName lang="default">Calculated Start Date</displayName>
+            <minOccurs inherited="false">0</minOccurs>
+            <maxOccurs inherited="false">1</maxOccurs>
+            <defaultValue inherited="false"></defaultValue>
+            <key inherited="false"></key>
+            <abstract inherited="false">false</abstract>
+            <deprecated inherited="false">false</deprecated>
+            <internal inherited="false">false</internal>
+            <sensitive inherited="false">false</sensitive>
+            <minLength inherited="false">0</minLength>
+            <maxLength inherited="false">40</maxLength>
+            <dataElements/>
+            <primitiveType>dateTime</primitiveType>
+          </element>
+          <element id="ds=SalesOrderFulfillment_Business+dataElement=ProductValidateBusinessFunction/duration" type="dataElement" typeName="Schema Element" kind="Element" name="duration" path="/ProductValidateBusinessFunction/duration" inherited="true">
+            <displayName lang="default">Duration</displayName>
+            <minOccurs inherited="false">0</minOccurs>
+            <maxOccurs inherited="false">1</maxOccurs>
+            <defaultValue inherited="false"></defaultValue>
+            <key inherited="false"></key>
+            <abstract inherited="false">false</abstract>
+            <deprecated inherited="false">false</deprecated>
+            <internal inherited="false">false</internal>
+            <sensitive inherited="false">false</sensitive>
+            <minLength inherited="false">0</minLength>
+            <maxLength inherited="false">40</maxLength>
+            <dataElements/>
+            <primitiveType>string</primitiveType>
+          </element>
+        </dataElements>
+        <primitiveType>structure</primitiveType>
+      </element>
+      <element id="ds=SalesOrderFulfillment_Business+dataElement=ProvisionBusinessFunction" type="dataElement" typeName="Schema Element" kind="Element" name="ProvisionBusinessFunction" path="/ProvisionBusinessFunction">
+        <displayName lang="default">Provision Business Function</displayName>
+        <minOccurs inherited="true">0</minOccurs>
+        <maxOccurs inherited="false">-1</maxOccurs>
+        <defaultValue inherited="true"></defaultValue>
+        <key inherited="false"></key>
+        <abstract inherited="false">false</abstract>
+        <deprecated inherited="false">false</deprecated>
+        <internal inherited="false">false</internal>
+        <sensitive inherited="true">false</sensitive>
+        <base>
+          <relation ref="ds=SalesOrderFulfillment-POCDataDictionary+dataElement=OrderComponent" type="Schema Element" name="Type" kind="Element">
+            <target name="OrderComponent" typeName="Schema Element"/>
+            <inEntity name="SalesOrderFulfillment-POCDataDictionary" typeName="Data Schema"/>
+          </relation>
+        </base>
+        <dataElements>
+          <element id="ds=SalesOrderFulfillment_Business+dataElement=ProvisionBusinessFunction/componentKey" type="dataElement" typeName="Schema Element" kind="Element" name="componentKey" path="/ProvisionBusinessFunction/componentKey" inherited="true">
+            <displayName lang="default">Component Key</displayName>
+            <minOccurs inherited="false">0</minOccurs>
+            <maxOccurs inherited="false">1</maxOccurs>
+            <defaultValue inherited="false"></defaultValue>
+            <key inherited="false"></key>
+            <abstract inherited="false">false</abstract>
+            <deprecated inherited="false">false</deprecated>
+            <internal inherited="false">false</internal>
+            <sensitive inherited="false">false</sensitive>
+            <minLength inherited="false">0</minLength>
+            <maxLength inherited="false">-1</maxLength>
+            <dataElements/>
+            <primitiveType>string</primitiveType>
+          </element>
+          <element id="ds=SalesOrderFulfillment_Business+dataElement=ProvisionBusinessFunction/orderItem" type="dataElement" typeName="Schema Element" kind="Element" name="orderItem" path="/ProvisionBusinessFunction/orderItem" inherited="true">
+            <displayName lang="default">Order Item</displayName>
+            <minOccurs inherited="false">0</minOccurs>
+            <maxOccurs inherited="false">-1</maxOccurs>
+            <defaultValue inherited="false"></defaultValue>
+            <key inherited="false"></key>
+            <abstract inherited="false">false</abstract>
+            <deprecated inherited="false">false</deprecated>
+            <internal inherited="false">false</internal>
+            <sensitive inherited="false">false</sensitive>
+            <dataElements/>
+            <primitiveType>structure</primitiveType>
+          </element>
+          <element id="ds=SalesOrderFulfillment_Business+dataElement=ProvisionBusinessFunction/calculatedStartDate" type="dataElement" typeName="Schema Element" kind="Element" name="calculatedStartDate" path="/ProvisionBusinessFunction/calculatedStartDate" inherited="true">
+            <displayName lang="default">Calculated Start Date</displayName>
+            <minOccurs inherited="false">0</minOccurs>
+            <maxOccurs inherited="false">1</maxOccurs>
+            <defaultValue inherited="false"></defaultValue>
+            <key inherited="false"></key>
+            <abstract inherited="false">false</abstract>
+            <deprecated inherited="false">false</deprecated>
+            <internal inherited="false">false</internal>
+            <sensitive inherited="false">false</sensitive>
+            <minLength inherited="false">0</minLength>
+            <maxLength inherited="false">40</maxLength>
+            <dataElements/>
+            <primitiveType>dateTime</primitiveType>
+          </element>
+          <element id="ds=SalesOrderFulfillment_Business+dataElement=ProvisionBusinessFunction/duration" type="dataElement" typeName="Schema Element" kind="Element" name="duration" path="/ProvisionBusinessFunction/duration" inherited="true">
+            <displayName lang="default">Duration</displayName>
+            <minOccurs inherited="false">0</minOccurs>
+            <maxOccurs inherited="false">1</maxOccurs>
+            <defaultValue inherited="false"></defaultValue>
+            <key inherited="false"></key>
+            <abstract inherited="false">false</abstract>
+            <deprecated inherited="false">false</deprecated>
+            <internal inherited="false">false</internal>
+            <sensitive inherited="false">false</sensitive>
+            <minLength inherited="false">0</minLength>
+            <maxLength inherited="false">40</maxLength>
+            <dataElements/>
+            <primitiveType>string</primitiveType>
+          </element>
+        </dataElements>
+        <primitiveType>structure</primitiveType>
+      </element>
+      <element id="ds=SalesOrderFulfillment_Business+dataElement=TrackEventBusinessFunction" type="dataElement" typeName="Schema Element" kind="Element" name="TrackEventBusinessFunction" path="/TrackEventBusinessFunction">
+        <displayName lang="default">Track Event Business Function</displayName>
+        <minOccurs inherited="true">0</minOccurs>
+        <maxOccurs inherited="false">-1</maxOccurs>
+        <defaultValue inherited="true"></defaultValue>
+        <key inherited="false"></key>
+        <abstract inherited="false">false</abstract>
+        <deprecated inherited="false">false</deprecated>
+        <internal inherited="false">false</internal>
+        <sensitive inherited="true">false</sensitive>
+        <base>
+          <relation ref="ds=SalesOrderFulfillment-POCDataDictionary+dataElement=OrderComponent" type="Schema Element" name="Type" kind="Element">
+            <target name="OrderComponent" typeName="Schema Element"/>
+            <inEntity name="SalesOrderFulfillment-POCDataDictionary" typeName="Data Schema"/>
+          </relation>
+        </base>
+        <dataElements>
+          <element id="ds=SalesOrderFulfillment_Business+dataElement=TrackEventBusinessFunction/componentKey" type="dataElement" typeName="Schema Element" kind="Element" name="componentKey" path="/TrackEventBusinessFunction/componentKey" inherited="true">
+            <displayName lang="default">Component Key</displayName>
+            <minOccurs inherited="false">0</minOccurs>
+            <maxOccurs inherited="false">1</maxOccurs>
+            <defaultValue inherited="false"></defaultValue>
+            <key inherited="false"></key>
+            <abstract inherited="false">false</abstract>
+            <deprecated inherited="false">false</deprecated>
+            <internal inherited="false">false</internal>
+            <sensitive inherited="false">false</sensitive>
+            <minLength inherited="false">0</minLength>
+            <maxLength inherited="false">-1</maxLength>
+            <dataElements/>
+            <primitiveType>string</primitiveType>
+          </element>
+          <element id="ds=SalesOrderFulfillment_Business+dataElement=TrackEventBusinessFunction/orderItem" type="dataElement" typeName="Schema Element" kind="Element" name="orderItem" path="/TrackEventBusinessFunction/orderItem" inherited="true">
+            <displayName lang="default">Order Item</displayName>
+            <minOccurs inherited="false">0</minOccurs>
+            <maxOccurs inherited="false">-1</maxOccurs>
+            <defaultValue inherited="false"></defaultValue>
+            <key inherited="false"></key>
+            <abstract inherited="false">false</abstract>
+            <deprecated inherited="false">false</deprecated>
+            <internal inherited="false">false</internal>
+            <sensitive inherited="false">false</sensitive>
+            <dataElements/>
+            <primitiveType>structure</primitiveType>
+          </element>
+          <element id="ds=SalesOrderFulfillment_Business+dataElement=TrackEventBusinessFunction/calculatedStartDate" type="dataElement" typeName="Schema Element" kind="Element" name="calculatedStartDate" path="/TrackEventBusinessFunction/calculatedStartDate" inherited="true">
+            <displayName lang="default">Calculated Start Date</displayName>
+            <minOccurs inherited="false">0</minOccurs>
+            <maxOccurs inherited="false">1</maxOccurs>
+            <defaultValue inherited="false"></defaultValue>
+            <key inherited="false"></key>
+            <abstract inherited="false">false</abstract>
+            <deprecated inherited="false">false</deprecated>
+            <internal inherited="false">false</internal>
+            <sensitive inherited="false">false</sensitive>
+            <minLength inherited="false">0</minLength>
+            <maxLength inherited="false">40</maxLength>
+            <dataElements/>
+            <primitiveType>dateTime</primitiveType>
+          </element>
+          <element id="ds=SalesOrderFulfillment_Business+dataElement=TrackEventBusinessFunction/duration" type="dataElement" typeName="Schema Element" kind="Element" name="duration" path="/TrackEventBusinessFunction/duration" inherited="true">
+            <displayName lang="default">Duration</displayName>
+            <minOccurs inherited="false">0</minOccurs>
+            <maxOccurs inherited="false">1</maxOccurs>
+            <defaultValue inherited="false"></defaultValue>
+            <key inherited="false"></key>
+            <abstract inherited="false">false</abstract>
+            <deprecated inherited="false">false</deprecated>
+            <internal inherited="false">false</internal>
+            <sensitive inherited="false">false</sensitive>
+            <minLength inherited="false">0</minLength>
+            <maxLength inherited="false">40</maxLength>
+            <dataElements/>
+            <primitiveType>string</primitiveType>
+          </element>
+        </dataElements>
+        <primitiveType>structure</primitiveType>
+      </element>
+    </dataElements>
+  </entity>
+</model:Model>

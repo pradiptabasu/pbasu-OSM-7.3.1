@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<process xmlns="http://www.metasolv.com/OMS/OrderModel/2002/06/25" name="ProductValidateProcess" workstream="false">
+  <description>ProductValidateProcess</description>
+  <expectedDuration>P0Y0M0DT0H0M86400S</expectedDuration>
+  <startActivity>ProductValidateTask</startActivity>
+  <activity name="ProductValidateTask">
+    <task>ProductValidateTask</task>
+    <description>ProductValidateTask</description>
+    <inputType>ANY</inputType>
+    <processHistorySummary>true</processHistorySummary>
+  </activity>
+  <activity name="ProductValidateTaskAuto">
+    <task>ProductValidateTaskAuto</task>
+    <description>ProductValidateTaskAuto</description>
+    <inputType>ANY</inputType>
+    <processHistorySummary>true</processHistorySummary>
+  </activity>
+  <transition>
+    <from>
+      <activity>ProductValidateTask</activity>
+      <status>next</status>
+    </from>
+    <to>ProductValidateTaskAuto</to>
+    <mandatoryCheck>true</mandatoryCheck>
+  </transition>
+  <transition>
+    <from>
+      <activity>ProductValidateTaskAuto</activity>
+      <status>ErrorState</status>
+    </from>
+    <to>ProductValidateTask</to>
+    <mandatoryCheck>false</mandatoryCheck>
+  </transition>
+</process>

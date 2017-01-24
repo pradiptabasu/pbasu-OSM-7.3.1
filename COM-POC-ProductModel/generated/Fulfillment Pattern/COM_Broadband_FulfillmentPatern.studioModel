@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cmn="http://xmlns.oracle.com/communications/studio/model/common" xmlns:model="http://xmlns.oracle.com/communications/studio/model">
+  <metadata version="1.0.0" release="7.3.0"/>
+  <entity xsi:type="cmn:FulfillmentPattern" id="fp=COM_Broadband_FulfillmentPatern" type="fp" typeName="Fulfillment Pattern" name="COM_Broadband_FulfillmentPatern" resource="\COM-POC-ProductModel\model\FULFILLMENT-PATTERN\COM_Broadband_FulfillmentPatern.procPtrnType">
+    <displayName lang="default">COM_Broadband_FulfillmentPatern</displayName>
+    <note lang="default"/>
+    <project>
+      <relation ref="mprj=COM-POC-ProductModel" type="Model Project" name="Dependency">
+        <target name="COM-POC-ProductModel" typeName="Model Project"/>
+      </relation>
+    </project>
+    <realization>
+      <element id="fp=COM_Broadband_FulfillmentPatern+fp.ppr=cZ44bT96Tkyk6tfgDa9yhQ" type="fp.ppr" typeName="Processing Pattern Realization" kind="Element" name="COM_Broadband_FulfillmentPatern Processing Pattern Realization" path="COM_Broadband_FulfillmentPatern Processing Pattern Realization">
+        <fulfillmentPatternSystemType>OSM</fulfillmentPatternSystemType>
+      </element>
+    </realization>
+    <classification>
+      <element id="fp=COM_Broadband_FulfillmentPatern+fp.ppc=0pgKNjujQySp0kX8HP9udg" type="fp.ppc" typeName="Processing Pattern Classification" kind="Element" name="COM_Broadband_FulfillmentPatern Processing Pattern Classification" path="COM_Broadband_FulfillmentPatern Processing Pattern Classification">
+        <functionalAreas>
+          <relation ref="fa=Commercial" type="Functional Area" name="Functional Area" kind="Entity">
+            <target name="Commercial" typeName="Functional Area"/>
+          </relation>
+        </functionalAreas>
+      </element>
+    </classification>
+  </entity>
+</model:Model>

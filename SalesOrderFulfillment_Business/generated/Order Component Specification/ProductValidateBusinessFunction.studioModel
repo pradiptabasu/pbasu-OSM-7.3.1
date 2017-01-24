@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://xmlns.oracle.com/communications/studio/model" xmlns:osm="http://xmlns.oracle.com/communications/studio/model/osm">
+  <metadata version="1.0.0" release="7.3.0"/>
+  <entity xsi:type="osm:OrderComponentSpecification" id="ocs=ProductValidateBusinessFunction" type="ocs" typeName="Order Component Specification" name="ProductValidateBusinessFunction" resource="\SalesOrderFulfillment_Business\model\FUNCTION\ProductValidateBusinessFunction.orderComponentSpec">
+    <displayName lang="default">ProductValidateBusinessFunction</displayName>
+    <note lang="default"/>
+    <project>
+      <relation ref="oprj=SalesOrderFulfillment_Business" type="Order and Service Management Project" name="Dependency">
+        <target name="SalesOrderFulfillment_Business" typeName="Order and Service Management Project"/>
+      </relation>
+    </project>
+    <process>
+      <relation ref="pro=ProductValidateProcess" type="Process" name="Process" kind="Entity">
+        <target name="ProductValidateProcess" typeName="Process"/>
+      </relation>
+    </process>
+    <componentElements>
+      <element xsi:type="osm:Component" id="ocs=ProductValidateBusinessFunction+osm.orch.orderComponentSpec.element=b5FuCqT4Sy2Ggj-XlrPgFQ" type="osm.orch.orderComponentSpec.element" typeName="Orchestration Component Element" kind="Element" name="ProductValidateBusinessFunction" path="/COM_FulfillmentFunction/ProductValidateBusinessFunction"/>
+    </componentElements>
+    <orderTemplateNodes>
+      <element xsi:type="osm:OrderTemplateNode" id="ocs=ProductValidateBusinessFunction+prov.order.node=/ControlData" type="prov.order.node" typeName="Order Node Element" kind="Element" name="ControlData" path="/ControlData"/>
+    </orderTemplateNodes>
+    <extend>
+      <relation ref="ocs=COM_FulfillmentFunction" type="Order Component Specification" name="Extends" kind="Entity">
+        <target name="COM_FulfillmentFunction" typeName="Order Component Specification"/>
+      </relation>
+    </extend>
+  </entity>
+</model:Model>

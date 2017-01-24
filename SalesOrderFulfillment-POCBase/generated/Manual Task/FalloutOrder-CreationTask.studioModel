@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://xmlns.oracle.com/communications/studio/model" xmlns:osm="http://xmlns.oracle.com/communications/studio/model/osm">
+  <metadata version="1.0.0" release="7.3.0"/>
+  <entity xsi:type="osm:ManualTask" id="mtsk=FalloutOrder-CreationTask" type="mtsk" typeName="Manual Task" name="FalloutOrder-CreationTask" resource="\SalesOrderFulfillment-POCBase\model\FALLOUTORDER-CREATIONTASK\FalloutOrder-CreationTask.manualTask">
+    <displayName lang="default">FalloutOrder-CreationTask</displayName>
+    <note lang="default"/>
+    <project>
+      <relation ref="oprj=SalesOrderFulfillment-POCBase" type="Order and Service Management Project" name="Dependency">
+        <target name="SalesOrderFulfillment-POCBase" typeName="Order and Service Management Project"/>
+      </relation>
+    </project>
+    <order>
+      <relation ref="ord=FalloutOrder" type="Order" name="Order" kind="Entity">
+        <target name="FalloutOrder" typeName="Order"/>
+      </relation>
+    </order>
+    <taskDataElements>
+      <element xsi:type="osm:TaskData" id="mtsk=FalloutOrder-CreationTask+prov.task.data.node=/inputMessage" type="prov.task.data.node" typeName="Task Data Element" kind="Element" name="inputMessage" path="/inputMessage"/>
+    </taskDataElements>
+    <roles>
+      <relation ref="rol=SalesOrderFulfillment-Role" type="Role" name="Permissions" kind="Entity">
+        <target name="SalesOrderFulfillment-Role" typeName="Role"/>
+      </relation>
+    </roles>
+  </entity>
+</model:Model>

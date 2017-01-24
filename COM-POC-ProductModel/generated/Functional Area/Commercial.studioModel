@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cmn="http://xmlns.oracle.com/communications/studio/model/common" xmlns:model="http://xmlns.oracle.com/communications/studio/model">
+  <metadata version="1.0.0" release="7.3.0"/>
+  <entity xsi:type="cmn:FunctionalArea" id="fa=Commercial" type="fa" typeName="Functional Area" name="Commercial" resource="\COM-POC-ProductModel\model\FUNCTIONAL-AREA\Commercial.funcArea">
+    <displayName lang="default">Commercial</displayName>
+    <note lang="default"/>
+    <project>
+      <relation ref="mprj=COM-POC-ProductModel" type="Model Project" name="Dependency">
+        <target name="COM-POC-ProductModel" typeName="Model Project"/>
+      </relation>
+    </project>
+    <dataElements/>
+    <actionPrefix>
+      <element id="fa=Commercial+fa.ap=RUTz1Iy2RV+0wejOUvTkig" type="fa.ap" typeName="Action Prefix" kind="Element" name="Commercial Action Prefix" path="Commercial Action Prefix"/>
+    </actionPrefix>
+    <actionCodes>
+      <element id="fa=Commercial+fa.faac=PXxV2yWtTyWwx06KP2lstw" type="fa.faac" typeName="Functional Area Action Codes" kind="Element" name="Commercial Functional Area Action Codes" path="Commercial Functional Area Action Codes"/>
+    </actionCodes>
+    <realization>
+      <element id="fa=Commercial+fa.far=kjZ2fmVYQo+jUyk23BFTag" type="fa.far" typeName="Functional Area Realization" kind="Element" name="Commercial Functional Area Realization" path="Commercial Functional Area Realization">
+        <designPattern></designPattern>
+        <functionalAreaRealizationStruct>NONE</functionalAreaRealizationStruct>
+      </element>
+    </realization>
+    <providerFunctions>
+      <element id="fa=Commercial+fa.pf=Fi4nJz6PSMKRZD8CWWXSUg" type="fa.pf" typeName="Provider Functions" kind="Element" name="Commercial Provider Functions" path="Commercial Provider Functions"/>
+    </providerFunctions>
+    <actionCodeDataMapList/>
+  </entity>
+</model:Model>

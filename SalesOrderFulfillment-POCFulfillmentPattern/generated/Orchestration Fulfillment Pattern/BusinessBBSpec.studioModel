@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model:Model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:model="http://xmlns.oracle.com/communications/studio/model" xmlns:osm="http://xmlns.oracle.com/communications/studio/model/osm">
+  <metadata version="1.0.0" release="7.3.0"/>
+  <entity xsi:type="osm:FulfillmentPattern" id="ofp=BusinessBBSpec" type="ofp" typeName="Orchestration Fulfillment Pattern" name="BusinessBBSpec" resource="\SalesOrderFulfillment-POCFulfillmentPattern\model\FULFILLMENT-PATTERN\BusinessBBSpec.productSpec">
+    <displayName lang="default">BusinessBBSpec</displayName>
+    <note lang="default"/>
+    <project>
+      <relation ref="oprj=SalesOrderFulfillment-POCFulfillmentPattern" type="Order and Service Management Project" name="Dependency">
+        <target name="SalesOrderFulfillment-POCFulfillmentPattern" typeName="Order and Service Management Project"/>
+      </relation>
+    </project>
+    <fulfillmentModes>
+      <relation ref="fm=Deliver" type="Fulfillment Mode" name="Fullfillment Mode" kind="Entity">
+        <target name="Deliver" typeName="Fulfillment Mode"/>
+      </relation>
+    </fulfillmentModes>
+    <orchestrationPlanComponents>
+      <relation ref="ocs=ProductValidateBusinessFunction" type="Order Component Specification" name="FulfillmentModeOrderComponentSpecs" kind="Entity">
+        <target name="ProductValidateBusinessFunction" typeName="Order Component Specification"/>
+      </relation>
+      <relation ref="ocs=ProvisionBusinessFunction" type="Order Component Specification" name="FulfillmentModeOrderComponentSpecs" kind="Entity">
+        <target name="ProvisionBusinessFunction" typeName="Order Component Specification"/>
+      </relation>
+      <relation ref="ocs=TrackEventBusinessFunction" type="Order Component Specification" name="FulfillmentModeOrderComponentSpecs" kind="Entity">
+        <target name="TrackEventBusinessFunction" typeName="Order Component Specification"/>
+      </relation>
+    </orchestrationPlanComponents>
+    <transitionFromOrchestrationPlanComponents>
+      <relation ref="ocs=ProductValidateBusinessFunction" type="Order Component Specification" name="oracle.communications.sce.osm.orchestration.productSpec.from.orchPlanComponent" kind="Entity">
+        <target name="ProductValidateBusinessFunction" typeName="Order Component Specification"/>
+      </relation>
+      <relation ref="ocs=ProvisionBusinessFunction" type="Order Component Specification" name="oracle.communications.sce.osm.orchestration.productSpec.from.orchPlanComponent" kind="Entity">
+        <target name="ProvisionBusinessFunction" typeName="Order Component Specification"/>
+      </relation>
+    </transitionFromOrchestrationPlanComponents>
+    <transitionToOrchestrationPlanComponents>
+      <relation ref="ocs=ProvisionBusinessFunction" type="Order Component Specification" name="oracle.communications.sce.osm.orchestration.productSpec.to.orchPlanComponent" kind="Entity">
+        <target name="ProvisionBusinessFunction" typeName="Order Component Specification"/>
+      </relation>
+      <relation ref="ocs=TrackEventBusinessFunction" type="Order Component Specification" name="oracle.communications.sce.osm.orchestration.productSpec.to.orchPlanComponent" kind="Entity">
+        <target name="TrackEventBusinessFunction" typeName="Order Component Specification"/>
+      </relation>
+    </transitionToOrchestrationPlanComponents>
+    <realizes>
+      <relation ref="fp=COM_Broadband_FulfillmentPatern" type="Fulfillment Pattern" name="Realization" kind="Entity">
+        <target name="COM_Broadband_FulfillmentPatern" typeName="Fulfillment Pattern"/>
+      </relation>
+    </realizes>
+    <plans>
+      <element xsi:type="osm:Plan" id="ofp=BusinessBBSpec+osm.orch.productSpec.plan=+SGGRH4yRPSbUGvUUaieFw" type="osm.orch.productSpec.plan" typeName="Orchestration Plan Element" kind="Element" name="Deliver" path="/Deliver"/>
+    </plans>
+  </entity>
+</model:Model>
