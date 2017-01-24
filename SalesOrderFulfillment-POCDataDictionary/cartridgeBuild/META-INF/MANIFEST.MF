@@ -4,8 +4,8 @@ Bundle-SymbolicName: SalesOrderFulfillment-POCDataDictionary
 Bundle-Name: SalesOrderFulfillment-POCDataDictionary
 Bundle-Description: SalesOrderFulfillment-POCDataDictionary
 Bundle-Version: 1.0.0.0.0
-Bundle-BuildTime: 2017-01-23 08:49:57
-Bundle-BuildNumber: 17
+Bundle-BuildTime: 2017-01-24 02:43:55
+Bundle-BuildNumber: 19
 Bundle-Category: OSM
 Bundle-Vendor: OSM Cartridge Provider
 Bundle-RequiredExecutionEnvironment: Oracle-Communications/OSM-7.3.1,

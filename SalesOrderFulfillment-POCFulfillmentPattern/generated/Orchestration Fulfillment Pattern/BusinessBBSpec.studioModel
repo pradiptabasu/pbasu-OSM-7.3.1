@@ -47,7 +47,7 @@
       </relation>
     </realizes>
     <plans>
-      <element xsi:type="osm:Plan" id="ofp=BusinessBBSpec+osm.orch.productSpec.plan=+SGGRH4yRPSbUGvUUaieFw" type="osm.orch.productSpec.plan" typeName="Orchestration Plan Element" kind="Element" name="Deliver" path="/Deliver"/>
+      <element xsi:type="osm:Plan" id="ofp=BusinessBBSpec+osm.orch.productSpec.plan=M7GRc0aPT6GG-Aon6BH9Fw" type="osm.orch.productSpec.plan" typeName="Orchestration Plan Element" kind="Element" name="Deliver" path="/Deliver"/>
     </plans>
   </entity>
 </model:Model>

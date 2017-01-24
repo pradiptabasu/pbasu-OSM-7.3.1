@@ -4,7 +4,7 @@
 <comment>Incremental build delta properties</comment>
 <entry key="automation.source.changed">false</entry>
 <entry key="xml.catalog.changed">false</entry>
-<entry key="automation.resource.changed">false</entry>
-<entry key="custom.automation.changed">false</entry>
+<entry key="automation.resource.changed">true</entry>
 <entry key="automation.lib.changed">false</entry>
+<entry key="custom.automation.changed">false</entry>
 </properties>

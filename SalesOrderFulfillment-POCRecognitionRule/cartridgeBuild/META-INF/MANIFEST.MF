@@ -4,8 +4,8 @@ Bundle-SymbolicName: SalesOrderFulfillment-POCRecognitionRule
 Bundle-Name: SalesOrderFulfillment-POCRecognitionRule
 Bundle-Description: SalesOrderFulfillment-POCRecognitionRule
 Bundle-Version: 1.0.0.0.0
-Bundle-BuildTime: 2017-01-23 09:02:19
-Bundle-BuildNumber: 37
+Bundle-BuildTime: 2017-01-24 02:44:11
+Bundle-BuildNumber: 39
 Bundle-Category: OSM
 Bundle-Vendor: OSM Cartridge Provider
 Bundle-RequiredExecutionEnvironment: Oracle-Communications/OSM-7.3.1,

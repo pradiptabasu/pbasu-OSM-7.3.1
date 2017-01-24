@@ -10,11 +10,11 @@
       </relation>
     </project>
     <componentElements>
-      <element xsi:type="osm:Component" id="ocs=COM_FulfillmentFunction+osm.orch.orderComponentSpec.element=6x8dNHhrRryK5ZN8MKQ4Ug" type="osm.orch.orderComponentSpec.element" typeName="Orchestration Component Element" kind="Element" name="COM_FulfillmentFunction" path="/COM_FulfillmentFunction">
+      <element xsi:type="osm:Component" id="ocs=COM_FulfillmentFunction+osm.orch.orderComponentSpec.element=vJXhWBsXRrq2125f+8C-FQ" type="osm.orch.orderComponentSpec.element" typeName="Orchestration Component Element" kind="Element" name="COM_FulfillmentFunction" path="/COM_FulfillmentFunction">
         <components>
-          <element xsi:type="osm:Component" id="ocs=ProductValidateBusinessFunction+osm.orch.orderComponentSpec.element=b5FuCqT4Sy2Ggj-XlrPgFQ" type="osm.orch.orderComponentSpec.element" typeName="Orchestration Component Element" kind="Element" name="ProductValidateBusinessFunction" path="/COM_FulfillmentFunction/ProductValidateBusinessFunction"/>
-          <element xsi:type="osm:Component" id="ocs=ProvisionBusinessFunction+osm.orch.orderComponentSpec.element=zvbTGkGxRSenGj4VZ4FZrg" type="osm.orch.orderComponentSpec.element" typeName="Orchestration Component Element" kind="Element" name="ProvisionBusinessFunction" path="/COM_FulfillmentFunction/ProvisionBusinessFunction"/>
-          <element xsi:type="osm:Component" id="ocs=TrackEventBusinessFunction+osm.orch.orderComponentSpec.element=LcLINyRAQ2yhr2YTnj7kTg" type="osm.orch.orderComponentSpec.element" typeName="Orchestration Component Element" kind="Element" name="TrackEventBusinessFunction" path="/COM_FulfillmentFunction/TrackEventBusinessFunction"/>
+          <element xsi:type="osm:Component" id="ocs=ProductValidateBusinessFunction+osm.orch.orderComponentSpec.element=4XzaG23gTyyAu7clifUd8g" type="osm.orch.orderComponentSpec.element" typeName="Orchestration Component Element" kind="Element" name="ProductValidateBusinessFunction" path="/COM_FulfillmentFunction/ProductValidateBusinessFunction"/>
+          <element xsi:type="osm:Component" id="ocs=ProvisionBusinessFunction+osm.orch.orderComponentSpec.element=hHZM4wPvQSm4xQ025NUa3w" type="osm.orch.orderComponentSpec.element" typeName="Orchestration Component Element" kind="Element" name="ProvisionBusinessFunction" path="/COM_FulfillmentFunction/ProvisionBusinessFunction"/>
+          <element xsi:type="osm:Component" id="ocs=TrackEventBusinessFunction+osm.orch.orderComponentSpec.element=000zwOtKRiSQ+8R4uNoYPg" type="osm.orch.orderComponentSpec.element" typeName="Orchestration Component Element" kind="Element" name="TrackEventBusinessFunction" path="/COM_FulfillmentFunction/TrackEventBusinessFunction"/>
         </components>
       </element>
     </componentElements>

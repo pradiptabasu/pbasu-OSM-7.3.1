@@ -10,7 +10,7 @@
       </relation>
     </project>
     <componentElements>
-      <element xsi:type="osm:Component" id="ocs=RetriveOrderEvent+osm.orch.orderComponentSpec.element=fY8Z1pRfTbWtNOzb6Tkm3w" type="osm.orch.orderComponentSpec.element" typeName="Orchestration Component Element" kind="Element" name="RetriveOrderEvent" path="/COM_FulfillmentSystem/RetriveOrderEvent"/>
+      <element xsi:type="osm:Component" id="ocs=RetriveOrderEvent+osm.orch.orderComponentSpec.element=7Kd4uwxjSqG-cgwKc0hnRQ" type="osm.orch.orderComponentSpec.element" typeName="Orchestration Component Element" kind="Element" name="RetriveOrderEvent" path="/COM_FulfillmentSystem/RetriveOrderEvent"/>
     </componentElements>
     <extend>
       <relation ref="ocs=COM_FulfillmentSystem" type="Order Component Specification" name="Extends" kind="Entity">
