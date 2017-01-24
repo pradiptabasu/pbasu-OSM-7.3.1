@@ -4,7 +4,7 @@
         <Name>SalesOrderFulfillment_Business</Name>
         <Version>1.0.0.0.0</Version>
         <Type>OSM</Type>
-        <BuildID>329</BuildID>
+        <BuildID>331</BuildID>
     </Identification>
     <Component>
         <Type>ModelComponentType</Type>
