@@ -146,6 +146,11 @@
 		<model:complexType name="AbstractParameterSpecification" namespace="http://xmlns.oracle.com/communications/studio/ordermanagement/transformation" abstract="true" final="false">
 			<model:description>AbstractParameterSpecification</model:description>
 			
+				 <model:extends>
+				    <model:name>BaseAbstractParameterSpecificationType</model:name>
+				    <model:namespace>OracleComms_OSM_CommonDataDictionary/4.0</model:namespace>
+				  </model:extends>
+			
 		</model:complexType>
 		<xi:include href="complexType/AbstractOrderItem.xml"/>
 		

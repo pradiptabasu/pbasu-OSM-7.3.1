@@ -10,10 +10,10 @@
       </relation>
     </project>
     <componentElements>
-      <element xsi:type="osm:Component" id="ocs=COM_FulfillmentGranularity+osm.orch.orderComponentSpec.element=md4myar6SQ+pe25h5fGQVg" type="osm.orch.orderComponentSpec.element" typeName="Orchestration Component Element" kind="Element" name="COM_FulfillmentGranularity" path="/COM_FulfillmentGranularity">
+      <element xsi:type="osm:Component" id="ocs=COM_FulfillmentGranularity+osm.orch.orderComponentSpec.element=j03ZNzR8Q-aeqj962jQHBg" type="osm.orch.orderComponentSpec.element" typeName="Orchestration Component Element" kind="Element" name="COM_FulfillmentGranularity" path="/COM_FulfillmentGranularity">
         <components>
-          <element xsi:type="osm:Component" id="ocs=ItemGranularity+osm.orch.orderComponentSpec.element=RTSMCVlOTFy9Ehw7YUrJWQ" type="osm.orch.orderComponentSpec.element" typeName="Orchestration Component Element" kind="Element" name="ItemGranularity" path="/COM_FulfillmentGranularity/ItemGranularity"/>
-          <element xsi:type="osm:Component" id="ocs=WholeOrderGranularity+osm.orch.orderComponentSpec.element=1dAF-coyQamxOLcfNh4D3A" type="osm.orch.orderComponentSpec.element" typeName="Orchestration Component Element" kind="Element" name="WholeOrderGranularity" path="/COM_FulfillmentGranularity/WholeOrderGranularity"/>
+          <element xsi:type="osm:Component" id="ocs=ItemGranularity+osm.orch.orderComponentSpec.element=yoPmqCsGQIGY3+WrSi-3cA" type="osm.orch.orderComponentSpec.element" typeName="Orchestration Component Element" kind="Element" name="ItemGranularity" path="/COM_FulfillmentGranularity/ItemGranularity"/>
+          <element xsi:type="osm:Component" id="ocs=WholeOrderGranularity+osm.orch.orderComponentSpec.element=LwA2uAEzRImOyjxNSHlbRA" type="osm.orch.orderComponentSpec.element" typeName="Orchestration Component Element" kind="Element" name="WholeOrderGranularity" path="/COM_FulfillmentGranularity/WholeOrderGranularity"/>
         </components>
       </element>
     </componentElements>

@@ -7,6 +7,10 @@
       <model:namespace>SalesOrderFulfillment</model:namespace>
     </model:fulfillmentMode>
     <model:component>
+      <model:name>ProductValidateBusinessFunction</model:name>
+      <model:namespace>SalesOrderFulfillment</model:namespace>
+    </model:component>
+    <model:component>
       <model:name>TrackEventBusinessFunction</model:name>
       <model:namespace>SalesOrderFulfillment</model:namespace>
       <model:condition>
@@ -25,10 +29,6 @@ return
     </model:component>
     <model:component>
       <model:name>ProvisionBusinessFunction</model:name>
-      <model:namespace>SalesOrderFulfillment</model:namespace>
-    </model:component>
-    <model:component>
-      <model:name>ProductValidateBusinessFunction</model:name>
       <model:namespace>SalesOrderFulfillment</model:namespace>
     </model:component>
     <model:transition name="BusinessBBSpec-Deliver--ProductValidateBusinessFunction-ProvisionBusinessFunction">

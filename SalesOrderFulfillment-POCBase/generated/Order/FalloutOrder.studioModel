@@ -43,7 +43,7 @@
       <element xsi:type="osm:OrderTemplateNode" id="ord=FalloutOrder+prov.order.node=/inputMessage" type="prov.order.node" typeName="Order Node Element" kind="Element" name="inputMessage" path="/inputMessage"/>
     </orderTemplateNodes>
     <rules>
-      <element xsi:type="osm:OrderRule" id="ord=FalloutOrder+prov.order.rule=RltjdZumTY+VtpwfA+qbSA" type="prov.order.rule" typeName="Order Template Rule Element" kind="Element" name="null_rule" path="null_rule"/>
+      <element xsi:type="osm:OrderRule" id="ord=FalloutOrder+prov.order.rule=jTekb9O2Q+CCDz7HCU8z3A" type="prov.order.rule" typeName="Order Template Rule Element" kind="Element" name="null_rule" path="null_rule"/>
     </rules>
   </entity>
 </model:Model>

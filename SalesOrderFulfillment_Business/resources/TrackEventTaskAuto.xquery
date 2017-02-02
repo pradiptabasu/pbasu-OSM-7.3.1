@@ -25,7 +25,7 @@ return
 	outboundMessage:setStringProperty($outboundMessage, 'Ora_OSM_COM_OrderId', $selfOrderID),
 	outboundMessage:setStringProperty($outboundMessage, 'Event', 'TrackEventTaskAuto'),
 	outboundMessage:setJMSCorrelationID($outboundMessage, concat($selfOrderID,'-','TrackEventTaskAuto')),
-	log:info($log,concat('Sending XML for Order : ', $selfOrderID)),
+	log:info($log,concat('Sending TrackEventTaskAuto XML for Order : ', $selfOrderID)),
 	context:completeTaskOnExit($context, "next"),$orderXML
 	
 )

@@ -10,7 +10,7 @@
       <maintenance>0</maintenance>
       <servicePack>0</servicePack>
       <efix>0</efix>
-      <build>329</build>
+      <build>354</build>
     </version>
     <targetVersion xsi:type="model:BuildVersion">
       <major>7</major>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <com:modelEntity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com="http://www.mslv.com/studio/core/model/common" xmlns:proc="http://xmlns.oracle.com/communications/sce/osm/model/process" xmlns="http://xmlns.oracle.com/communications/sce/osm/model/process" xmlns:prov="http://xmlns.oracle.com/communications/sce/osm/model/provisioning" xmlns:task="http://xmlns.oracle.com/communications/sce/osm/model/process/task" xsi:type="proc:processType" name="ProductValidateProcess" workstream="false">
   <com:displayName>ProductValidateProcess</com:displayName>
-  <com:saveVersion>6</com:saveVersion>
+  <com:saveVersion>8</com:saveVersion>
   <com:id>HFfIjCsfRTCfl04f4JtI9Q</com:id>
   <proc:orderType>
     <com:entity>SalesOrderFulfillment</com:entity>
@@ -26,8 +26,8 @@
   <proc:activity xsi:type="proc:taskRef" id="Task2" name="ProductValidateTask">
     <proc:processHistorySummary>true</proc:processHistorySummary>
     <proc:diagramLocation>
-      <proc:Xcoordinate>130.0</proc:Xcoordinate>
-      <proc:Ycoordinate>215.0</proc:Ycoordinate>
+      <proc:Xcoordinate>76.0</proc:Xcoordinate>
+      <proc:Ycoordinate>299.0</proc:Ycoordinate>
     </proc:diagramLocation>
     <proc:task>
       <com:entity>ProductValidateTask</com:entity>
@@ -38,8 +38,8 @@
   <proc:activity xsi:type="proc:taskRef" id="Task1" name="ProductValidateTaskAuto">
     <proc:processHistorySummary>true</proc:processHistorySummary>
     <proc:diagramLocation>
-      <proc:Xcoordinate>446.0</proc:Xcoordinate>
-      <proc:Ycoordinate>219.0</proc:Ycoordinate>
+      <proc:Xcoordinate>362.0</proc:Xcoordinate>
+      <proc:Ycoordinate>86.0</proc:Ycoordinate>
     </proc:diagramLocation>
     <proc:task>
       <com:entity>ProductValidateTaskAuto</com:entity>
@@ -59,16 +59,16 @@
     <proc:status></proc:status>
     <proc:mandatoryCheck>true</proc:mandatoryCheck>
   </proc:transition>
-  <proc:transition id="Flow3" name="next">
-    <proc:from>Task1</proc:from>
-    <proc:to>End3</proc:to>
-    <proc:status>next</proc:status>
-    <proc:mandatoryCheck>false</proc:mandatoryCheck>
-  </proc:transition>
   <proc:transition id="Flow4" name="ErrorState">
     <proc:from>Task1</proc:from>
     <proc:to>Task2</proc:to>
     <proc:status>ErrorState</proc:status>
+    <proc:mandatoryCheck>false</proc:mandatoryCheck>
+  </proc:transition>
+  <proc:transition id="Flow3" name="next">
+    <proc:from>Task1</proc:from>
+    <proc:to>End3</proc:to>
+    <proc:status>next</proc:status>
     <proc:mandatoryCheck>false</proc:mandatoryCheck>
   </proc:transition>
 </com:modelEntity>

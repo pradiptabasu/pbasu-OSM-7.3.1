@@ -10,11 +10,11 @@
       </relation>
     </project>
     <componentElements>
-      <element xsi:type="osm:Component" id="ocs=COM_FulfillmentSystem+osm.orch.orderComponentSpec.element=COiU9unIT+eAQmUyisDCGw" type="osm.orch.orderComponentSpec.element" typeName="Orchestration Component Element" kind="Element" name="COM_FulfillmentSystem" path="/COM_FulfillmentSystem">
+      <element xsi:type="osm:Component" id="ocs=COM_FulfillmentSystem+osm.orch.orderComponentSpec.element=ZH992KCTTayiyi0jKlFm-g" type="osm.orch.orderComponentSpec.element" typeName="Orchestration Component Element" kind="Element" name="COM_FulfillmentSystem" path="/COM_FulfillmentSystem">
         <components>
-          <element xsi:type="osm:Component" id="ocs=ProductValidate-ALL+osm.orch.orderComponentSpec.element=XRrXSzy1TI2IV4lHpZI0Pg" type="osm.orch.orderComponentSpec.element" typeName="Orchestration Component Element" kind="Element" name="ProductValidate-ALL" path="/COM_FulfillmentSystem/ProductValidate-ALL"/>
-          <element xsi:type="osm:Component" id="ocs=Provisioning-ALL+osm.orch.orderComponentSpec.element=irTP2yO8Tqib3kSJbLD+sQ" type="osm.orch.orderComponentSpec.element" typeName="Orchestration Component Element" kind="Element" name="Provisioning-ALL" path="/COM_FulfillmentSystem/Provisioning-ALL"/>
-          <element xsi:type="osm:Component" id="ocs=RetriveOrderEvent+osm.orch.orderComponentSpec.element=V45xeypSS1mrnYGGfGrW+A" type="osm.orch.orderComponentSpec.element" typeName="Orchestration Component Element" kind="Element" name="RetriveOrderEvent" path="/COM_FulfillmentSystem/RetriveOrderEvent"/>
+          <element xsi:type="osm:Component" id="ocs=ProductValidate-ALL+osm.orch.orderComponentSpec.element=NNl3uz2VSIqI89S8lVcgCg" type="osm.orch.orderComponentSpec.element" typeName="Orchestration Component Element" kind="Element" name="ProductValidate-ALL" path="/COM_FulfillmentSystem/ProductValidate-ALL"/>
+          <element xsi:type="osm:Component" id="ocs=Provisioning-ALL+osm.orch.orderComponentSpec.element=qbfu3-AETYWTbyA-Pkrawg" type="osm.orch.orderComponentSpec.element" typeName="Orchestration Component Element" kind="Element" name="Provisioning-ALL" path="/COM_FulfillmentSystem/Provisioning-ALL"/>
+          <element xsi:type="osm:Component" id="ocs=RetriveOrderEvent+osm.orch.orderComponentSpec.element=4an8Hh7eQKK+50TYjGVxTQ" type="osm.orch.orderComponentSpec.element" typeName="Orchestration Component Element" kind="Element" name="RetriveOrderEvent" path="/COM_FulfillmentSystem/RetriveOrderEvent"/>
         </components>
       </element>
     </componentElements>

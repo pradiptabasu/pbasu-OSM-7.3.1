@@ -10,7 +10,7 @@
       </relation>
     </project>
     <componentElements>
-      <element xsi:type="osm:Component" id="ocs=Provisioning-ALL+osm.orch.orderComponentSpec.element=irTP2yO8Tqib3kSJbLD+sQ" type="osm.orch.orderComponentSpec.element" typeName="Orchestration Component Element" kind="Element" name="Provisioning-ALL" path="/COM_FulfillmentSystem/Provisioning-ALL"/>
+      <element xsi:type="osm:Component" id="ocs=Provisioning-ALL+osm.orch.orderComponentSpec.element=qbfu3-AETYWTbyA-Pkrawg" type="osm.orch.orderComponentSpec.element" typeName="Orchestration Component Element" kind="Element" name="Provisioning-ALL" path="/COM_FulfillmentSystem/Provisioning-ALL"/>
     </componentElements>
     <extend>
       <relation ref="ocs=COM_FulfillmentSystem" type="Order Component Specification" name="Extends" kind="Entity">

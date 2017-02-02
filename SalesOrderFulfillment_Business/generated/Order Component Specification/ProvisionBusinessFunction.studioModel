@@ -15,7 +15,7 @@
       </relation>
     </process>
     <componentElements>
-      <element xsi:type="osm:Component" id="ocs=ProvisionBusinessFunction+osm.orch.orderComponentSpec.element=sYrM-nDEQ1Sp+bfCca1PuA" type="osm.orch.orderComponentSpec.element" typeName="Orchestration Component Element" kind="Element" name="ProvisionBusinessFunction" path="/COM_FulfillmentFunction/ProvisionBusinessFunction"/>
+      <element xsi:type="osm:Component" id="ocs=ProvisionBusinessFunction+osm.orch.orderComponentSpec.element=jJ+M3S3yT1WAHty6BS3gfA" type="osm.orch.orderComponentSpec.element" typeName="Orchestration Component Element" kind="Element" name="ProvisionBusinessFunction" path="/COM_FulfillmentFunction/ProvisionBusinessFunction"/>
     </componentElements>
     <orderTemplateNodes>
       <element xsi:type="osm:OrderTemplateNode" id="ocs=ProvisionBusinessFunction+prov.order.node=/ControlData" type="prov.order.node" typeName="Order Node Element" kind="Element" name="ControlData" path="/ControlData"/>
