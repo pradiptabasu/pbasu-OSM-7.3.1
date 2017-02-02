@@ -5,80 +5,10 @@
     <displayName lang="default">Environment</displayName>
     <note lang="default"/>
     <environmentProperty>
-      <value inherited="true">true</value>
-      <cartridgeType>Order and Service Management Composite Cartridge</cartridgeType>
+      <value inherited="true">NO_CHANGE</value>
+      <cartridgeType>Order and Service Management Project</cartridgeType>
       <category>Cartridge Management</category>
-      <name>DEFAULT_CARTRIDGE</name>
-      <sensitive>false</sensitive>
-    </environmentProperty>
-    <environmentProperty>
-      <value inherited="true">replace</value>
-      <cartridgeType>Order and Service Management Composite Cartridge</cartridgeType>
-      <category>Cartridge Management</category>
-      <name>ENTITY_CONFLICT_ACTION_ON_DEPLOY</name>
-      <sensitive>false</sensitive>
-    </environmentProperty>
-    <environmentProperty>
-      <value inherited="true">true</value>
-      <cartridgeType>Order and Service Management Composite Cartridge</cartridgeType>
-      <category>Cartridge Management</category>
-      <name>FAST_CARTRIDGE_UNDEPLOY</name>
-      <sensitive>false</sensitive>
-    </environmentProperty>
-    <environmentProperty>
-      <value inherited="true">false</value>
-      <cartridgeType>Order and Service Management Composite Cartridge</cartridgeType>
-      <category>Cartridge Management</category>
-      <name>PURGE_CARTRIDGE_BEFORE_DEPLOY</name>
-      <sensitive>false</sensitive>
-    </environmentProperty>
-    <environmentProperty>
-      <value inherited="true">true</value>
-      <cartridgeType>Order and Service Management Composite Cartridge</cartridgeType>
-      <category>Cartridge Management</category>
-      <name>PURGE_ORDER_ON_UNDEPLOY</name>
-      <sensitive>false</sensitive>
-    </environmentProperty>
-    <environmentProperty>
-      <value inherited="true">false</value>
-      <cartridgeType>Order and Service Management Composite Cartridge</cartridgeType>
-      <category>Cartridge Management</category>
-      <name>UNDEPLOY_SHARED_CARTRIDGE</name>
-      <sensitive>false</sensitive>
-    </environmentProperty>
-    <environmentProperty>
-      <value inherited="true">ENV1</value>
-      <cartridgeType>Order and Service Management Composite Cartridge</cartridgeType>
-      <category>Model</category>
-      <name>ACTIVATION_ENVIRONMENT_ID</name>
-      <sensitive>false</sensitive>
-    </environmentProperty>
-    <environmentProperty>
-      <value inherited="true">oms-automation</value>
-      <cartridgeType>Order and Service Management Composite Cartridge</cartridgeType>
-      <category>Model</category>
-      <name>DEFAULT_AUTOMATION_USER</name>
-      <sensitive>false</sensitive>
-    </environmentProperty>
-    <environmentProperty>
-      <value inherited="true"></value>
-      <cartridgeType>Order and Service Management Composite Cartridge</cartridgeType>
-      <category>Model</category>
-      <name>DEFAULT_MESSAGE_PROPERTY_SELECTOR</name>
-      <sensitive>false</sensitive>
-    </environmentProperty>
-    <environmentProperty>
-      <value inherited="true"></value>
-      <cartridgeType>Order and Service Management Composite Cartridge</cartridgeType>
-      <category>Model</category>
-      <name>DEFAULT_REQUEST_QUEUE</name>
-      <sensitive>false</sensitive>
-    </environmentProperty>
-    <environmentProperty>
-      <value inherited="true">mslv/oms/oms1/internal/jms/events</value>
-      <cartridgeType>Order and Service Management Composite Cartridge</cartridgeType>
-      <category>Model</category>
-      <name>DEFAULT_RESPONSE_QUEUE</name>
+      <name>CONFIGURATION_ACTION_ON_UNDEPLOY</name>
       <sensitive>false</sensitive>
     </environmentProperty>
     <environmentProperty>

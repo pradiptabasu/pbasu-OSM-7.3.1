@@ -4,8 +4,8 @@ Bundle-SymbolicName: SalesOrderFulfillment-POCFulfillmentPattern
 Bundle-Name: SalesOrderFulfillment-POCFulfillmentPattern
 Bundle-Description: SalesOrderFulfillment-POCFulfillmentPattern
 Bundle-Version: 1.0.0.0.0
-Bundle-BuildTime: 2017-02-02 02:57:42
-Bundle-BuildNumber: 47
+Bundle-BuildTime: 2017-02-02 07:03:55
+Bundle-BuildNumber: 50
 Bundle-Category: OSM
 Bundle-Vendor: OSM Cartridge Provider
 Bundle-RequiredExecutionEnvironment: Oracle-Communications/OSM-7.3.1,

@@ -4,7 +4,7 @@
         <Name>SalesOrderFulfillment-POCBase</Name>
         <Version>1.1.0.0.0</Version>
         <Type>OSM</Type>
-        <BuildID>110</BuildID>
+        <BuildID>113</BuildID>
     </Identification>
     <Component>
         <Type>ModelComponentType</Type>
